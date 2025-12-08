@@ -23,4 +23,4 @@ function scramble(str, arr) {
   }
   return output.join("");
 }
-console.log(scramble("abcd", [0, 3, 1, 2])); // "acdb"
+// console.log(scramble("abcd", [0, 3, 1, 2])); // "acdb"
