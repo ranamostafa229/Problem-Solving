@@ -47,4 +47,18 @@ function removeChar(str) {
   // or str.slice(1,-1)
 }
 
-console.log(removeChar("country"));
+// console.log(removeChar("country"));
+
+/* (3) Is it a palindrome?
+Write a function that checks if a given string (case insensitive) is a palindrome.
+A palindrome is a word, number, phrase, or other sequence of symbols that 
+reads the same backwards as forwards, such as madam or racecar.
+*/
+function isPalindrome(x) {
+  const lowerCasedStr = x.toLowerCase();
+  const reservedStr = lowerCasedStr.split("").reverse();
+  return lowerCasedStr
+    .split("")
+    .every((char, index) => char === reservedStr[index]);
+}
+console.log(isPalindrome("Madam"));
