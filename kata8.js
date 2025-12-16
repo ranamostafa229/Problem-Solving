@@ -227,3 +227,22 @@ function litres(time) {
   return Math.floor(time * 0.5);
 }
 // console.log(litres(6.7));
+
+/* (11) Find the position
+When provided with a letter, return its position in the alphabet.
+
+Input :: "a"
+Output :: "Position of alphabet: 1"
+
+Note: Only lowercased English letters are tested
+*/
+function position(letter) {
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  return (
+    `Position of alphabet: ` +
+    (letters.split("").findIndex((char) => char === letter) + 1)
+  );
+  // [OR]
+  // return `Position of alphabet: ${letters.indexOf(letter) + 1}`;
+}
+console.log(position("z"));
