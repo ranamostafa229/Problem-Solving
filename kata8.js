@@ -329,7 +329,7 @@ const quarterOf = (month) => {
 };
 // console.log(quarterOf(11));
 
-/*
+/* (16) Geometry Basics: Distance between points in 2D
 This series of katas will introduce you to basics of doing geometry with computers.
 Point objects have attributes x and y.
 Write a function calculating distance between Point a and Point b.
