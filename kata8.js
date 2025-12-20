@@ -354,4 +354,12 @@ Assume the angles formed by AB and BC are right angles.
 function polygonArea(A, B, C, D) {
   return (1 / 2) * (A + C) * B;
 }
-console.log(polygonArea(2, 5, 10, 2.5)); //30
+// console.log(polygonArea(2, 5, 10, 2.5)); //30
+
+/* (18) Hex to Decimal
+Complete the function which converts hex number (given as a string) to a decimal number.
+*/
+function hexToDec(hexString) {
+  return parseInt(hexString, 16);
+}
+console.log(hexToDec("-C"));
