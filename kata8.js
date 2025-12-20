@@ -374,4 +374,21 @@ Example(Input --> Output):
 function reverseWords(str) {
   return str.split(" ").reverse().join(" ");
 }
-console.log(reverseWords("yoda doesn't speak like this")); // "this like speak doesn't yoda"
+// console.log(reverseWords("yoda doesn't speak like this")); // "this like speak doesn't yoda"
+
+/* (20) Color Ghost
+Color Ghost
+Create a class Ghost
+Ghost objects are instantiated without any arguments.
+Ghost objects are given a random color attribute of "white" or "yellow" or "purple" or "red" when instantiated
+
+ghost = new Ghost();
+ghost.color //=> "white" or "yellow" or "purple" or "red"
+*/
+
+let Ghost = function () {
+  let colors = ["white", "yellow", "purple", "red"];
+  this.color = colors[Math.floor(Math.random() * 4)];
+};
+let ghost = new Ghost();
+console.log(ghost.color);
