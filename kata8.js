@@ -344,4 +344,14 @@ function distanceBetweenPoints(a, b) {
   // [OR] Math.hypot() calculate the square root of the sum of squares of its arguments
   // return Math.hypot(b.x - a.x, b.y - a.y);
 }
-console.log(distanceBetweenPoints({ x: 1, y: 1 }, { x: 2, y: 2 }));
+// console.log(distanceBetweenPoints({ x: 1, y: 1 }, { x: 2, y: 2 }));
+
+/* (17) Area of a Polygon (Easy)
+Write the function polygonArea(A,B,C,D) that finds the area of polygons of this type:
+Assume D always equals B/2.
+Assume the angles formed by AB and BC are right angles.
+*/
+function polygonArea(A, B, C, D) {
+  return (1 / 2) * (A + C) * B;
+}
+console.log(polygonArea(2, 5, 10, 2.5)); //30
