@@ -500,4 +500,17 @@ Output will be the shortened string, e.g., "Friday May 2".
 function shortenToDate(longDate) {
   return longDate.split(",")[0];
 }
-console.log(shortenToDate("Friday May 2, 7pm")); // "Friday May 2"
+// console.log(shortenToDate("Friday May 2, 7pm")); // "Friday May 2"
+
+/* (26) 5 without numbers !!
+Write a function that always returns 5
+
+Sounds easy right? Just bear in mind that you can't use any of
+ the following characters: 0123456789*+-/
+
+*/
+function unusualFive() {
+  return "five!".length;
+}
+
+console.log(unusualFive()); // 5
