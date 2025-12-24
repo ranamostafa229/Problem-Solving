@@ -535,6 +535,24 @@ function betterThanAverage(classPoints, yourPoints) {
     ? false
     : true;
 }
-console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75)); // true
-console.log(betterThanAverage([50, 50, 50], 50)); // false
-console.log(betterThanAverage([2, 3], 5)); // true
+// console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75)); // true
+// console.log(betterThanAverage([50, 50, 50], 50)); // false
+// console.log(betterThanAverage([2, 3], 5)); // true
+
+/* (28) Do I get a bonus?
+It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... 
+but who is going to make the most money?
+
+Build a function that takes in two arguments (salary, bonus). Salary will be an integer, 
+and bonus a boolean.
+
+If bonus is true, the salary should be multiplied by 10. 
+If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+Return the total figure the individual will receive as a string prefixed with £ (= "\u00A3"
+*/
+
+function bonusTime(salary, bonus) {
+  return "\u00A3" + ((bonus && salary * 10) || salary);
+}
+console.log(bonusTime(25000, true));
+console.log(bonusTime(10000, false));
