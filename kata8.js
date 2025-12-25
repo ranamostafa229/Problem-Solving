@@ -607,6 +607,16 @@ function firstNonConsecutive(arr) {
   // ?? =>  only treat null and undefined as false
   // || would treat other falsy values like 0 as false (0, "", false, NaN) so it is not suitable here
 }
-console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8])); // 6
-console.log(firstNonConsecutive([1, 2, 3, 4])); // null
-console.log(firstNonConsecutive([1, 2, 0, 4])); // 0
+// console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8])); // 6
+// console.log(firstNonConsecutive([1, 2, 3, 4])); // null
+// console.log(firstNonConsecutive([1, 2, 0, 4])); // 0
+
+/* (31) Merging sorted integer arrays (without duplicates)
+Write a function that merges two sorted arrays into a single one. 
+The arrays only contain integers. Also, the final outcome must be sorted 
+and not have any duplicate.
+*/
+function mergeArrays(a, b) {
+  return Array.from(new Set([...a, ...b].sort((x, y) => x - y)));
+}
+console.log(mergeArrays([1, 3, 5], [2, 4, 6]));
