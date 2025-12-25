@@ -619,4 +619,17 @@ and not have any duplicate.
 function mergeArrays(a, b) {
   return Array.from(new Set([...a, ...b].sort((x, y) => x - y)));
 }
-console.log(mergeArrays([1, 3, 5], [2, 4, 6]));
+// console.log(mergeArrays([1, 3, 5], [2, 4, 6]));
+
+/* (32) Convert a string to an array
+Write a function to split a string and convert it into an array of words.
+
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+*/
+function stringToArray(string) {
+  return string.split(" ");
+}
+console.log(stringToArray("I love arrays they are my favorite")); // ["I", "love", "arrays", "they", "are", "my", "favorite"]
