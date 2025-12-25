@@ -650,5 +650,24 @@ const areaOrPerimeter = function (l, w) {
   return l === w ? l * w : 2 * (w + l);
 };
 
-console.log(areaOrPerimeter(6, 10)); //32
-console.log(areaOrPerimeter(3, 3)); //9
+// console.log(areaOrPerimeter(6, 10)); //32
+// console.log(areaOrPerimeter(3, 3)); //9
+
+/* (34) What is between?
+Complete the function that takes two integers (a, b, where a < b) and return 
+an array of all integers between the input parameters, including them.
+
+For example:
+a = 1
+b = 4
+--> [1, 2, 3, 4]
+
+*/
+function between(a, b) {
+  let output = [];
+  for (let i = a; i <= b; i++) {
+    output.push(i);
+  }
+  return output;
+}
+console.log(between(-2, 2)); // [-2, -1, 0, 1, 2]
