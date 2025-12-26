@@ -670,4 +670,32 @@ function between(a, b) {
   }
   return output;
 }
-console.log(between(-2, 2)); // [-2, -1, 0, 1, 2]
+// console.log(between(-2, 2)); // [-2, -1, 0, 1, 2]
+
+/* (35) Sum of multiples
+Find the sum of all multiples of n below m
+
+Keep in Mind
+n and m should be natural numbers (positive integers). 
+Otherwise, see the examples in your language about how to handle invalid input values.
+m is excluded from the multiples
+
+Examples
+sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
+sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
+sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+sumMul(4, -7)  ==> "INVALID"
+
+*/
+
+function sumMul(n, m) {
+  let output = 0;
+  m - n <= 0 && (output = "INVALID");
+  for (i = n; i < m; i += n) {
+    output += i;
+  }
+  return output;
+}
+console.log(sumMul(2, 9)); //20
+console.log(sumMul(0, 0)); // "INVALID"
+console.log(sumMul(4, -7)); // "INVALID"
