@@ -776,4 +776,22 @@ Example : n=5 --> [5,4,3,2,1]
 const reverseSeq = (n) => {
   return new Array(n).fill(1).map((_, i) => n - i);
 };
-console.log(reverseSeq(5)); // [5,4,3,2,1]
+// console.log(reverseSeq(5)); // [5,4,3,2,1]
+
+/* (39) Is there a vowel in there?
+Given an array of numbers, check if any of the numbers are the character codes 
+for lower case vowels (a, e, i, o, u).
+
+If they are, change the array value to a string of that vowel.
+
+input [100,100,116,105,117,121]=>[100,100,116,"i","u",121] output Return the resulting array.
+*/
+function isVow(a) {
+  // ASCII CODES // [a, e, i, o, u] => [97, 101, 105, 111, 117]
+  return String.fromCharCode(...a)
+    .split("")
+    .map((char) =>
+      ["a", "e", "i", "o", "u"].includes(char) ? char : char.charCodeAt(0)
+    );
+}
+console.log(isVow([118, 117, 120, 121, 97, 101, 105, 111, 117, 98])); // [118,"u",120,121,"a","e","i","o","u",98]
