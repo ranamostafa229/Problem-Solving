@@ -794,4 +794,15 @@ function isVow(a) {
       ["a", "e", "i", "o", "u"].includes(char) ? char : char.charCodeAt(0)
     );
 }
-console.log(isVow([118, 117, 120, 121, 97, 101, 105, 111, 117, 98])); // [118,"u",120,121,"a","e","i","o","u",98]
+// console.log(isVow([118, 117, 120, 121, 97, 101, 105, 111, 117, 98])); // [118,"u",120,121,"a","e","i","o","u",98]
+
+/* (40) Simple multiplication
+This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+even => *8 
+odd => *9
+*/
+function simpleMultiplication(number) {
+  return number % 2 === 0 ? number * 8 : number * 9;
+}
+console.log(simpleMultiplication(2)); //16
+console.log(simpleMultiplication(3)); //27
