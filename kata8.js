@@ -820,32 +820,61 @@ function twoSort(s) {
   return s.sort()[0].split("").join("***");
 }
 
+// console.log(
+//   twoSort([
+//     "bitcoin",
+//     "take",
+//     "over",
+//     "the",
+//     "world",
+//     "maybe",
+//     "who",
+//     "knows",
+//     "perhaps",
+//   ])
+// ); // "b***i***t***c***o***i***n"
+// console.log(
+//   twoSort([
+//     "turns",
+//     "out",
+//     "random",
+//     "test",
+//     "cases",
+//     "are",
+//     "easier",
+//     "than",
+//     "writing",
+//     "out",
+//     "basic",
+//     "ones",
+//   ])
+// ); // "a***r***e"
+
+/* (42) Printing Array elements with Comma delimiters
+Input: Array of elements
+
+["h","o","l","a"]
+
+Output: String with comma delimited elements of the array in th same order.
+
+"h,o,l,a"
+Note: the input data can be: boolean array, array of objects, array of string arrays, 
+array of number arrays... 😕
+*/
+function printArray(array) {
+  return array.toString();
+  // [OR]
+  // return array.join(",");
+}
 console.log(
-  twoSort([
-    "bitcoin",
-    "take",
-    "over",
-    "the",
-    "world",
-    "maybe",
-    "who",
-    "knows",
-    "perhaps",
+  printArray([
+    ["hello", "this", "is", "an", "array!"],
+    [1, 2, 3, 4, 5],
   ])
-); // "b***i***t***c***o***i***n"
+); // "hello,this,is,an,array!,1,2,3,4,5"
 console.log(
-  twoSort([
-    "turns",
-    "out",
-    "random",
-    "test",
-    "cases",
-    "are",
-    "easier",
-    "than",
-    "writing",
-    "out",
-    "basic",
-    "ones",
+  printArray([
+    { firstName: "Ruslan", lastName: "López" },
+    { firstName: "John", lastName: "Doe" },
   ])
-); // "a***r***e"
+); // "[object Object],[object Object]"
