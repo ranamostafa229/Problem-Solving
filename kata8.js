@@ -866,15 +866,25 @@ function printArray(array) {
   // [OR]
   // return array.join(",");
 }
-console.log(
-  printArray([
-    ["hello", "this", "is", "an", "array!"],
-    [1, 2, 3, 4, 5],
-  ])
-); // "hello,this,is,an,array!,1,2,3,4,5"
-console.log(
-  printArray([
-    { firstName: "Ruslan", lastName: "López" },
-    { firstName: "John", lastName: "Doe" },
-  ])
-); // "[object Object],[object Object]"
+// console.log(
+//   printArray([
+//     ["hello", "this", "is", "an", "array!"],
+//     [1, 2, 3, 4, 5],
+//   ])
+// ); // "hello,this,is,an,array!,1,2,3,4,5"
+// console.log(
+//   printArray([
+//     { firstName: "Ruslan", lastName: "López" },
+//     { firstName: "John", lastName: "Doe" },
+//   ])
+// ); // "[object Object],[object Object]"
+
+/* (43) get ascii value of character
+ */
+function getASCII(c) {
+  // char to ASCII => char.charCodeAt(0)
+  // ASCII to char String.fromCharCode()
+  return c.charCodeAt(0);
+}
+console.log(getASCII("A")); // 65
+console.log(getASCII(" ")); // 32
