@@ -932,6 +932,28 @@ function generateRange(min, max, step) {
   // }
   // return output;
 }
-console.log(generateRange(2, 10, 2)); // [2,4,6,8,10]
-console.log(generateRange(1, 10, 1)); // [1,2,3,4,5,6,7,8,9,10]
-console.log(generateRange(1, 10, 4)); // [1,5,9]
+// console.log(generateRange(2, 10, 2)); // [2,4,6,8,10]
+// console.log(generateRange(1, 10, 1)); // [1,2,3,4,5,6,7,8,9,10]
+// console.log(generateRange(1, 10, 4)); // [1,5,9]
+
+/* (46) Sum of differences in array
+Your task is to sum the differences between consecutive pairs in the array in descending order.
+
+Example
+[2, 1, 10]  -->  9
+In descending order: [10, 2, 1]
+
+Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+
+If the array is empty or the array has only one element the result should be 0
+*/
+function sumOfDifferences(arr) {
+  const sortedArr = arr.sort((a, b) => b - a);
+  return arr.length < 1 ? 0 : sortedArr[0] - sortedArr[arr.length - 1];
+  // [OR]
+  // return arr.length < 1 ? 0 : Math.max(...arr) - Math.min(...arr);
+}
+console.log(sumOfDifferences([-3, -2, -1])); // -1,-2,-3 => (-1 - -2) + (-2 - -3) = 1 + 1 = 2
+console.log(sumOfDifferences([1, 2, 10])); // 10,2,1 => (10 - 2) + (2 - 1) = 8 + 1 = 9
+console.log(sumOfDifferences([])); // 0
+console.log(sumOfDifferences([1])); // 0
