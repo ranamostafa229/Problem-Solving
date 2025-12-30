@@ -971,6 +971,19 @@ This example will return the string Hello, John Smith! Welcome to Phoenix, Arizo
 function sayHello(name, city, state) {
   return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
 }
-console.log(
-  sayHello(["Franklin", "Delano", "Roosevelt"], "Chicago", "Illinois")
-); // "Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!"
+// console.log(
+//   sayHello(["Franklin", "Delano", "Roosevelt"], "Chicago", "Illinois")
+// ); // "Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!"
+
+/* (48) You only need one - Beginner
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+a can contain numbers or strings. x can be either.
+
+Return true if the array contains the value, false if not.
+*/
+function check(a, x) {
+  return a.includes(x);
+}
+// console.log(check(["t", "e", "s", "t"], "e")); // true
+// console.log(check([1, 2, 3, 4], 5)); // false
