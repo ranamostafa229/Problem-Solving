@@ -953,7 +953,24 @@ function sumOfDifferences(arr) {
   // [OR]
   // return arr.length < 1 ? 0 : Math.max(...arr) - Math.min(...arr);
 }
-console.log(sumOfDifferences([-3, -2, -1])); // -1,-2,-3 => (-1 - -2) + (-2 - -3) = 1 + 1 = 2
-console.log(sumOfDifferences([1, 2, 10])); // 10,2,1 => (10 - 2) + (2 - 1) = 8 + 1 = 9
-console.log(sumOfDifferences([])); // 0
-console.log(sumOfDifferences([1])); // 0
+// console.log(sumOfDifferences([-3, -2, -1])); // -1,-2,-3 => (-1 - -2) + (-2 - -3) = 1 + 1 = 2
+// console.log(sumOfDifferences([1, 2, 10])); // 10,2,1 => (10 - 2) + (2 - 1) = 8 + 1 = 9
+// console.log(sumOfDifferences([])); // 0
+// console.log(sumOfDifferences([1])); // 0
+
+/* (47) Welcome to the City
+Create a method that takes as input a name, city, and state to welcome a person. 
+Note that name will be an array consisting of one or more values that should be joined together with one space between each, 
+and the length of the name array in test cases will vary.
+
+Example:
+
+['John', 'Smith'], 'Phoenix', 'Arizona'
+This example will return the string Hello, John Smith! Welcome to Phoenix, Arizona!
+*/
+function sayHello(name, city, state) {
+  return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
+}
+console.log(
+  sayHello(["Franklin", "Delano", "Roosevelt"], "Chicago", "Illinois")
+); // "Hello, Franklin Delano Roosevelt! Welcome to Chicago, Illinois!"
