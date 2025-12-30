@@ -987,3 +987,28 @@ function check(a, x) {
 }
 // console.log(check(["t", "e", "s", "t"], "e")); // true
 // console.log(check([1, 2, 3, 4], 5)); // false
+
+/* (49) Define a card suit
+You get any card as an argument. Your task is to return the suit of this card (in lowercase).
+
+Our deck (is preloaded):
+
+('3♣') -> return 'clubs'
+('3♦') -> return 'diamonds'
+('3♥') -> return 'hearts'
+('3♠') -> return 'spades'
+
+*/
+function defineSuit(card) {
+  // .slice(-1) => get the last character of the string
+  return {
+    "♣": "clubs",
+    "♦": "diamonds",
+    "♥": "hearts",
+    "♠": "spades",
+  }[card.slice(-1)];
+}
+console.log(defineSuit("3♣")); // 'clubs'
+console.log(defineSuit("3♦")); // 'diamonds'
+console.log(defineSuit("3♥")); // 'hearts'
+console.log(defineSuit("3♠")); // 'spades'
