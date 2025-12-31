@@ -1095,6 +1095,26 @@ first(arr, 0) //=> [];
 function first(arr, n = 1) {
   return arr.slice(0, n);
 }
-console.log(first(["a", "b", "c", "d", "e"])); // ['a']
-console.log(first(["a", "b", "c", "d", "e"], 2)); // ['a', 'b']
-console.log(first(["a", "b", "c", "d", "e"], 0)); // []
+// console.log(first(["a", "b", "c", "d", "e"])); // ['a']
+// console.log(first(["a", "b", "c", "d", "e"], 2)); // ['a', 'b']
+// console.log(first(["a", "b", "c", "d", "e"], 0)); // []
+
+/* (54) To square(root) or not to square(root)
+Write a method, that will get an integer array as parameter and will process every number 
+from this array.
+
+Return a new array with processing every number of the input-array like this:
+
+If the number has an integer square root, take this, otherwise square the number.
+
+Example
+[4,3,9,7,2,1] -> [2,9,3,49,4,1]
+Notes
+The input array will always contain only positive numbers, and will never be empty or null.
+*/
+function squareOrSquareRoot(array) {
+  return array.map((num) =>
+    Math.sqrt(num) % 1 === 0 ? Math.sqrt(num) : num * num
+  );
+}
+console.log(squareOrSquareRoot([4, 3, 9, 7, 2, 1])); // [2,9,3,49,4,1]
