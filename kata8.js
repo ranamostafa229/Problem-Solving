@@ -1073,7 +1073,28 @@ function stringy(size) {
   // return output;
 }
 
-console.log(stringy(6)); // '101010'
-console.log(stringy(4)); // '1010'
-console.log(stringy(15)); // '101010101010101'
-console.log(stringy(25)); // '1010101010101010101010101'
+// console.log(stringy(6)); // '101010'
+// console.log(stringy(4)); // '1010'
+// console.log(stringy(15)); // '101010101010101'
+// console.log(stringy(25)); // '1010101010101010101010101'
+
+/* (53) pick a set of first elements
+Write a function to get the first element(s) of a sequence. Passing a parameter n 
+(default=1) will return the first n element(s) of the sequence.
+
+If n == 0 return an empty sequence []
+
+Examples
+var arr = ['a', 'b', 'c', 'd', 'e'];
+first(arr) //=> ['a'];
+first(arr, 2) //=> ['a', 'b']
+first(arr, 3) //=> ['a', 'b', 'c'];
+first(arr, 0) //=> [];
+
+*/
+function first(arr, n = 1) {
+  return arr.slice(0, n);
+}
+console.log(first(["a", "b", "c", "d", "e"])); // ['a']
+console.log(first(["a", "b", "c", "d", "e"], 2)); // ['a', 'b']
+console.log(first(["a", "b", "c", "d", "e"], 0)); // []
