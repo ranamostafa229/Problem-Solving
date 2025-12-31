@@ -1117,4 +1117,16 @@ function squareOrSquareRoot(array) {
     Math.sqrt(num) % 1 === 0 ? Math.sqrt(num) : num * num
   );
 }
-console.log(squareOrSquareRoot([4, 3, 9, 7, 2, 1])); // [2,9,3,49,4,1]
+// console.log(squareOrSquareRoot([4, 3, 9, 7, 2, 1])); // [2,9,3,49,4,1]
+
+/* (55) Name Shuffler
+Write a function that returns a string in which firstname is swapped with last name.
+
+Example(Input --> Output)
+
+"john McClane" --> "McClane john"
+*/
+function nameShuffler(str) {
+  return str.split(" ").reverse().join(" ");
+}
+console.log(nameShuffler("john McClane")); // "McClane john"
