@@ -1047,5 +1047,33 @@ Some cases:
 function multipleOfIndex(array) {
   return array.filter((num, index) => num % index === 0 || num === 0);
 }
-console.log(multipleOfIndex([22, -6, 32, 82, 9, 25])); // [-6, 32, 25]
-console.log(multipleOfIndex([0, 2, 3, 6, 9])); // [0, 2,6]
+// console.log(multipleOfIndex([22, -6, 32, 82, 9, 25])); // [-6, 32, 25]
+// console.log(multipleOfIndex([0, 2, 3, 6, 9])); // [0, 2,6]
+
+/* (52) Stringy Strings
+write me a function stringy that takes a size and returns a string of alternating 1s and 0s.
+
+the string should start with a 1.
+
+a string with size 6 should return :'101010'.
+
+with size 4 should return : '1010'.
+
+with size 12 should return : '101010101010'.
+
+The size will always be positive and will only use whole numbers.
+*/
+function stringy(size) {
+  return `${"10".repeat(size / 2)}${size % 2 ? 1 : ""}`;
+  // [OR]
+  // let output = "";
+  // for (let i = 1; i <= size; i++) {
+  //   output += i % 2;
+  // }
+  // return output;
+}
+
+console.log(stringy(6)); // '101010'
+console.log(stringy(4)); // '1010'
+console.log(stringy(15)); // '101010101010101'
+console.log(stringy(25)); // '1010101010101010101010101'
