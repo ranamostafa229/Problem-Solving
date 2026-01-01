@@ -1152,5 +1152,25 @@ function areYouPlayingBanjo(name) {
   //   (name[0].toLowerCase() === "r" ? " plays banjo" : " does not play banjo")
   // );
 }
-console.log(areYouPlayingBanjo("Ringo")); // "Ringo plays banjo"
-console.log(areYouPlayingBanjo("Martin")); // "Martin does not play banjo"
+// console.log(areYouPlayingBanjo("Ringo")); // "Ringo plays banjo"
+// console.log(areYouPlayingBanjo("Martin")); // "Martin does not play banjo"
+
+/* (57) Reversing Words in a String
+
+You need to write a function that reverses the words in a given string. 
+Words are always separated by a single space.
+
+As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+Example (Input --> Output)
+
+"Hello World" --> "World Hello"
+"Hi There." --> "There. Hi"
+*/
+function reverse(string) {
+  return string.split(" ").reverse().join(" ");
+  //[or]
+  // [firstName, lastName] = string.split(" ");
+  // return lastName + " " + firstName;
+}
+console.log(reverse("Hi There.")); // "There. Hi"
