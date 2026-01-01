@@ -1173,4 +1173,15 @@ function reverse(string) {
   // [firstName, lastName] = string.split(" ");
   // return lastName + " " + firstName;
 }
-console.log(reverse("Hi There.")); // "There. Hi"
+// console.log(reverse("Hi There.")); // "There. Hi"
+
+/* (58) Returning String
+Create a function that accepts a parameter representing a name and returns the message: 
+"Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly]
+*/
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
+}
+console.log(greet("Bob"));
