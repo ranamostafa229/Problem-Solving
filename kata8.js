@@ -1253,4 +1253,29 @@ class Kata {
     return length * width * height;
   }
 }
-console.log(Kata.getVolumeOfCuboid(1, 2, 2)); // 4
+// console.log(Kata.getVolumeOfCuboid(1, 2, 2)); // 4
+
+/* (63) Duck Duck Goose
+Given an array of Player objects and a position (first position is 1), 
+return the name of the chosen Player.
+name is a property of Player objects, e.g Player.name
+
+Example:
+
+duck_duck_goose([a, b, c, d], 1) should return a.name
+duck_duck_goose([a, b, c, d], 5) should return a.name
+duck_duck_goose([a, b, c, d], 4) should return d.name
+*/
+class Player {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const players = ["a", "b", "c", "d", "e", "f"].map((name) => new Player(name));
+function duckDuckGoose(players, goose) {
+  return players[(goose - 1) % players.length].name;
+}
+console.log(duckDuckGoose(players, 1)); // a
+console.log(duckDuckGoose(players, 3)); // c
+console.log(duckDuckGoose(players, 6)); // f
+console.log(duckDuckGoose(players, 8)); // b
