@@ -1316,6 +1316,25 @@ function logicalCalc(array, op) {
   };
   return array.reduce((acc, cur) => operator[op](acc, cur));
 }
-console.log(logicalCalc([true, true, true, false], "AND")); // false
-console.log(logicalCalc([true, true, true, false], "OR")); // true
-console.log(logicalCalc([true, true, true, false], "XOR")); // true
+// console.log(logicalCalc([true, true, true, false], "AND")); // false
+// console.log(logicalCalc([true, true, true, false], "OR")); // true
+// console.log(logicalCalc([true, true, true, false], "XOR")); // true
+
+/* (65) Remove duplicates from list
+Define a function that removes duplicates from an array of non negative numbers 
+and returns it as a result.
+
+The order of the sequence has to stay the same.
+
+Examples:
+
+Input -> Output
+[1, 1, 2] -> [1, 2]
+[1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+*/
+function distinct(a) {
+  return [...new Set(a)];
+}
+console.log(distinct([1, 1, 2])); // [1,2]
+console.log(distinct([1, 2, 1, 1, 3, 2])); // [1,2,3]
