@@ -1494,21 +1494,38 @@ function warnTheSheep(queue) {
     ? "Pls go away and stop eating my sheep"
     : `Oi! Sheep number ${position}! You are about to be eaten by a wolf!`;
 }
-console.log(
-  warnTheSheep([
-    "sheep",
-    "sheep",
-    "sheep",
-    "sheep",
-    "sheep",
-    "wolf",
-    "sheep",
-    "sheep",
-  ])
-); //Oi! Sheep number 2! You are about to be eaten by a wolf!
+// console.log(
+//   warnTheSheep([
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "wolf",
+//     "sheep",
+//     "sheep",
+//   ])
+// ); //Oi! Sheep number 2! You are about to be eaten by a wolf!
 
-console.log(
-  warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"])
-); //Oi! Sheep number 5! You are about to be eaten by a wolf!
+// console.log(
+//   warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"])
+// ); //Oi! Sheep number 5! You are about to be eaten by a wolf!
 
-console.log(warnTheSheep(["sheep", "sheep", "wolf"])); //Pls go away and stop eating my sheep
+// console.log(warnTheSheep(["sheep", "sheep", "wolf"])); //Pls go away and stop eating my sheep
+
+/* (70) UEFA EURO 2016
+Finish the uefaEuro2016() function so it return string just like in the examples below:
+
+uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
+uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
+uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
+*/
+function uefaEuro2016(teams, scores) {
+  const winningTeam = scores.indexOf(Math.max(...scores));
+  return scores[0] === scores[1]
+    ? `At match ${teams[0]} - ${teams[1]}, teams played draw.`
+    : `At match ${teams[0]} - ${teams[1]}, ${teams[winningTeam]} won!`;
+}
+console.log(uefaEuro2016(["Germany", "Ukraine"], [2, 0])); // "At match Germany - Ukraine, Germany won!"
+console.log(uefaEuro2016(["Belgium", "Italy"], [0, 2])); // "At match Belgium - Italy, Italy won!"
+console.log(uefaEuro2016(["Portugal", "Iceland"], [1, 1])); // "At match Portugal - Iceland, teams played draw."
