@@ -1598,6 +1598,33 @@ function aliasGen(first, last) {
     ? firstName[first[0].toUpperCase()] + " " + surname[last[0].toUpperCase()]
     : "Your name must start with a letter from A - Z.";
 }
-console.log(aliasGen("Larry", "Brentwood")); // Logic Bomb
-console.log(aliasGen("123abc", "Petrovic")); // Your name must start with a letter from A - Z.
-console.log(aliasGen("xaaq5", "lunjr")); // Xerox Lazer
+// console.log(aliasGen("Larry", "Brentwood")); // Logic Bomb
+// console.log(aliasGen("123abc", "Petrovic")); // Your name must start with a letter from A - Z.
+// console.log(aliasGen("xaaq5", "lunjr")); // Xerox Lazer
+
+/* (73) Enumerable Magic #20 - Cascading Subsets
+Create a method each_cons that accepts a list and a number n, and returns cascading subsets 
+of the list of size n, like so:
+
+each_cons([1,2,3,4], 2)
+  #=> [[1,2], [2,3], [3,4]]
+
+each_cons([1,2,3,4], 3)
+  #=> [[1,2,3],[2,3,4]]
+  
+As you can see, the lists are cascading; ie, they overlap, but never out of order.
+*/
+function eachCons(array, n) {
+  return Array.from({ length: array.length - n + 1 }, (_, i) =>
+    array.slice(i, i + n)
+  );
+  // [OR]
+  // let output = [];
+  // for (let i = 0; i <= array.length - n; i++) {
+  //   output.push(array.slice(i, i + n));
+  // }
+  // return output;
+}
+console.log(eachCons([3, 5, 8, 13]), 1); //[[3], [5], [8], [13]]
+console.log(eachCons([3, 5, 8, 13], 2)); //[[3, 5], [5, 8], [8, 13]]
+console.log(eachCons([3, 5, 8, 13], 3)); //[[3, 5, 8], [5, 8, 13]]
