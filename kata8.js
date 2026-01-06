@@ -1526,6 +1526,27 @@ function uefaEuro2016(teams, scores) {
     ? `At match ${teams[0]} - ${teams[1]}, teams played draw.`
     : `At match ${teams[0]} - ${teams[1]}, ${teams[winningTeam]} won!`;
 }
-console.log(uefaEuro2016(["Germany", "Ukraine"], [2, 0])); // "At match Germany - Ukraine, Germany won!"
-console.log(uefaEuro2016(["Belgium", "Italy"], [0, 2])); // "At match Belgium - Italy, Italy won!"
-console.log(uefaEuro2016(["Portugal", "Iceland"], [1, 1])); // "At match Portugal - Iceland, teams played draw."
+// console.log(uefaEuro2016(["Germany", "Ukraine"], [2, 0])); // "At match Germany - Ukraine, Germany won!"
+// console.log(uefaEuro2016(["Belgium", "Italy"], [0, 2])); // "At match Belgium - Italy, Italy won!"
+// console.log(uefaEuro2016(["Portugal", "Iceland"], [1, 1])); // "At match Portugal - Iceland, teams played draw."
+
+/* (71) SpeedCode #2 - Array Madness
+Objective
+Given two integer arrays a, b, both of length >= 1, 
+create a program that returns true if the sum of the squares of each element 
+in a is strictly greater than the sum of the cubes of each element in b.
+
+E.g.
+
+arrayMadness([4, 5, 6], [1, 2, 3]); 
+// returns true since 4 ** 2 + 5 ** 2 + 6 ** 2 > 1 ** 3 + 2 ** 3 + 3 ** 3
+
+*/
+function arrayMadness(a, b) {
+  return (
+    a.reduce((acc, cur) => cur ** 2 + acc, 0) >
+    b.reduce((acc, cur) => cur ** 3 + acc, 0)
+  );
+}
+console.log(arrayMadness([4, 5, 6], [1, 2, 3])); // true
+console.log(arrayMadness([5, 6, 7], [4, 5, 6])); // false
