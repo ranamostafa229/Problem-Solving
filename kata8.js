@@ -1625,6 +1625,29 @@ function eachCons(array, n) {
   // }
   // return output;
 }
-console.log(eachCons([3, 5, 8, 13]), 1); //[[3], [5], [8], [13]]
-console.log(eachCons([3, 5, 8, 13], 2)); //[[3, 5], [5, 8], [8, 13]]
-console.log(eachCons([3, 5, 8, 13], 3)); //[[3, 5, 8], [5, 8, 13]]
+// console.log(eachCons([3, 5, 8, 13]), 1); //[[3], [5], [8], [13]]
+// console.log(eachCons([3, 5, 8, 13], 2)); //[[3, 5], [5, 8], [8, 13]]
+// console.log(eachCons([3, 5, 8, 13], 3)); //[[3, 5, 8], [5, 8, 13]]
+
+/* (74) Implement Array.prototype.filter()
+What we want to implement is Array.prototype.filter() function, 
+just like the existing Array.prototype.filter(). Another similar function is _.filter() in underscore.js and lodash.js.
+
+The usage will be quite simple, like:
+
+[1, 2, 3, 4, 5].filter(num => num > 3) == [4, 5]
+Of course, the existing Array.prototype.filter() function has been undefined 
+for the purposes of this Kata.
+*/
+Array.prototype.filter = function (func) {
+  let output = [];
+  // this refer to the array
+  for (let i = 0; i < this.length; i++) {
+    if (func(this[i])) {
+      // call the function with each element
+      output.push(this[i]);
+    }
+  }
+  return output;
+};
+console.log([1, 2, 3, 4, 5].filter((num) => num > 3)); //[4, 5]
