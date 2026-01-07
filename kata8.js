@@ -1759,9 +1759,48 @@ function countWords(str) {
   return str.split(/\s/).filter((item) => item !== "").length;
   // \s = matches any whitespace char includes space or newline
 }
-console.log(countWords("Hello")); // 1
-console.log(countWords("Hello, World!")); // 2
-console.log(countWords("With! Symbol@ #Around! (Every) %Word$")); // 5
-console.log(countWords("Dear   Victoria, I love  to press   space button.")); // 8
+// console.log(countWords("Hello")); // 1
+// console.log(countWords("Hello, World!")); // 2
+// console.log(countWords("With! Symbol@ #Around! (Every) %Word$")); // 5
+// console.log(countWords("Dear   Victoria, I love  to press   space button.")); // 8
 //  work with non-whitespace (ex. breakspace) chars
-console.log(countWords("Hello\u00A0World")); // 2
+// console.log(countWords("Hello\u00A0World")); // 2
+
+/* (78) Neutralisation
+Given two strings comprised of + and -, return a new string which shows how 
+the two strings interact in the following way:
+
+When positives and positives interact, they remain positive.
+When negatives and negatives interact, they remain negative.
+But when negatives and positives interact, they become neutral, and are shown as the number 0.
+
+Worked Example
+("+-+", "+--") ➞ "+-0"
+# Compare the first characters of each string, then the next in turn.
+# "+" against a "+" returns another "+".
+# "-" against a "-" returns another "-".
+# "+" against a "-" returns "0".
+# Return the string of characters.
+
+Examples
+("--++--", "++--++") ➞ "000000"
+
+("-+-+-+", "-+-+-+") ➞ "-+-+-+"
+
+("-++-", "-+-+") ➞ "-+00"
+Notes
+The two strings will be the same length.
+*/
+
+function neutralise(s1, s2) {
+  return [...s1].map((char1, i) => (char1 === s2[i] ? char1 : 0)).join("");
+  // [OR]
+  // let output = "";
+  // for (let i = 0; i < s1.length; i++) {
+  //   output += s1[i] === s2[i] ? s1[i] : 0;
+  // }
+  // return output;
+}
+console.log(neutralise("--++--", "++--++")); // 000000
+console.log(neutralise("-+-+-+", "-+-+-+")); // -+-+-+
+console.log(neutralise("-++-", "-+-+")); // -+00
