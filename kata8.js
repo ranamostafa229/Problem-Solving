@@ -1670,5 +1670,67 @@ If one of the arguments is a number your code must coerce it into being a string
 function joinStrings(string1, string2) {
   return `${string1} ${string2}`;
 }
-console.log(joinStrings("string1", "string2")); // 'string1 string2'
-console.log(joinStrings(1, "string2")); // '1 string2'
+// console.log(joinStrings("string1", "string2")); // 'string1 string2'
+// console.log(joinStrings(1, "string2")); // '1 string2'
+
+/* (76) Polish alphabet
+There are 32 letters in the Polish alphabet: 9 vowels and 23 consonants.
+
+Your task is to change the letters with diacritics:
+
+ą -> a,
+ć -> c,
+ę -> e,
+ł -> l,
+ń -> n,
+ó -> o,
+ś -> s,
+ź -> z,
+ż -> z
+and print out the string without the use of the Polish letters.
+
+For example:
+
+"Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
+*/
+function correctPolishLetters(string) {
+  return string.replace(/[ąćęłńóśźż]/gi, (char) => {
+    switch (char) {
+      case "ą":
+        return "a";
+      case "ć":
+        return "c";
+      case "ę":
+        return "e";
+      case "ł":
+        return "l";
+      case "ń":
+        return "n";
+      case "ó":
+        return "o";
+      case "ś":
+        return "s";
+      case "ź":
+        return "z";
+      case "ż":
+        return "z";
+    }
+  });
+  // [OR]
+  // const polish = {
+  //   ą: "a",
+  //   ć: "c",
+  //   ę: "e",
+  //   ł: "l",
+  //   ń: "n",
+  //   ó: "o",
+  //   ś: "s",
+  //   ź: "z",
+  //   ż: "z",
+  // };
+  // return string
+  //   .split("")
+  //   .map((char) => polish[char] || char)
+  //   .join("");
+}
+console.log(correctPolishLetters("Jędrzej Błądziński")); // "Jedrzej Bladzinski"
