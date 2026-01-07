@@ -1820,5 +1820,32 @@ If this one is an alligator (case-insensitive) return small otherwise return wid
 function mouthSize(animal) {
   return animal.toLowerCase() === "alligator" ? "small" : "wide";
 }
-console.log(mouthSize("toucan")); // wide
-console.log(mouthSize("alligator")); // small
+// console.log(mouthSize("toucan")); // wide
+// console.log(mouthSize("alligator")); // small
+
+/* (80) Exclamation marks series #1: Remove an exclamation mark from the end of string
+Description:
+Remove an exclamation mark from the end of a string. For a beginner kata, 
+you can assume that the input data is always a string, no need to verify it.
+
+Examples
+"Hi!"     ---> "Hi"
+"Hi!!!"   ---> "Hi!!"
+"!Hi"     ---> "!Hi"
+"!Hi!"    ---> "!Hi"
+"Hi! Hi!" ---> "Hi! Hi"
+"Hi"      ---> "Hi"
+
+*/
+function remove(string) {
+  return string[string.length - 1] === "!" ? string.slice(0, -1) : string;
+  // [OR]
+  // return string.replace(/!$/, ""); // $ => end of string
+  // [OR]
+  // return string.endsWith("!") ? string.slice(0, -1) : string;
+}
+console.log(remove("Hi!")); // "Hi"
+console.log(remove("Hi!!!")); // "Hi!!"
+console.log(remove("!Hi")); // "!Hi"
+console.log(remove("!Hi!")); // "!Hi"
+console.log(remove("Hi! Hi!")); // "Hi! Hi"
