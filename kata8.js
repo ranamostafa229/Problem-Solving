@@ -1953,3 +1953,13 @@ function htmlspecialchars(formData) {
 
 // console.log(htmlspecialchars("<h2>Hello World</h2>")); // "&lt;h2&gt;Hello World&lt;/h2&gt;"
 // console.log(htmlspecialchars("Hello, how would you & I fare?")); // "Hello, how would you &amp; I fare?"
+
+/* (84) Convert boolean values to strings 'Yes' or 'No'.
+Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string 
+for false.
+*/
+function boolToWord(bool) {
+  return bool ? "Yes" : "No";
+}
+console.log(boolToWord(true)); // "Yes"
+console.log(boolToWord(false)); // "No"
