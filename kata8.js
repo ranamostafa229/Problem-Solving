@@ -1844,8 +1844,24 @@ function remove(string) {
   // [OR]
   // return string.endsWith("!") ? string.slice(0, -1) : string;
 }
-console.log(remove("Hi!")); // "Hi"
-console.log(remove("Hi!!!")); // "Hi!!"
-console.log(remove("!Hi")); // "!Hi"
-console.log(remove("!Hi!")); // "!Hi"
-console.log(remove("Hi! Hi!")); // "Hi! Hi"
+// console.log(remove("Hi!")); // "Hi"
+// console.log(remove("Hi!!!")); // "Hi!!"
+// console.log(remove("!Hi")); // "!Hi"
+// console.log(remove("!Hi!")); // "!Hi"
+// console.log(remove("Hi! Hi!")); // "Hi! Hi"
+
+/* (81) Grasshopper - Personalized Message
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+case	return
+name equals owner	'Hello boss'
+otherwise	'Hello guest'
+
+*/
+function greet(name, owner) {
+  return `Hello ${name === owner ? "boss" : "guest"}`;
+}
+console.log(greet("Daniel", "Daniel")); // 'Hello boss'
+console.log(greet("Greg", "Daniel")); // 'Hello guest'
