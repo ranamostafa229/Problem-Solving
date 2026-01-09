@@ -2032,6 +2032,22 @@ String.prototype.toAlternatingCase = function () {
     )
     .join("");
 };
-console.log("hello world".toAlternatingCase()); // "HELLO WORLD"
-console.log("HELLO WORLD".toAlternatingCase()); // "hello world"
-console.log("hello WORLD".toAlternatingCase()); // "HELLO world"
+// console.log("hello world".toAlternatingCase()); // "HELLO WORLD"
+// console.log("HELLO WORLD".toAlternatingCase()); // "hello world"
+// console.log("hello WORLD".toAlternatingCase()); // "HELLO world"
+
+/* (88) Bin to Decimal
+Complete the function which converts a binary number (given as a string) to a decimal number.
+*/
+function binToDec(bin) {
+  // return parseInt(bin, 2);
+  [OR];
+  let decimal = 0;
+  for (let i = 0; i < bin.length; i++) {
+    decimal = decimal * 2 + (bin[i] === "1" ? 1 : 0);
+  }
+  return decimal;
+}
+console.log(binToDec("0")); //0
+console.log(binToDec("1001001")); //73
+console.log(binToDec("1011"));
