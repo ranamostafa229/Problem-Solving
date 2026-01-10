@@ -2101,5 +2101,23 @@ The character limit is 60 (CoffeeScript), 85 (JavaScript, Python), 161 (Java).
 function find(a, e) {
   return a.indexOf(e) !== -1 ? a.indexOf(e) : "Not found";
 }
-console.log(find([1, 2, 3, 4], 3)); //2
-console.log(find([1, 2, 3, 4], 5)); //"Not found"
+// console.log(find([1, 2, 3, 4], 3)); //2
+// console.log(find([1, 2, 3, 4], 5)); //"Not found"
+
+/* (91) Grasshopper - Terminal game move function
+Terminal game move function
+In this game, the hero moves from left to right. The player rolls the die and moves the number of spaces 
+indicated by the die two times.
+
+Create a function for the terminal game that takes the current position of the hero and the roll (1-6)
+ and return the new position.
+
+Example:
+move(3, 6) should equal 15
+*/
+function move(position, roll) {
+  return position + roll * 2;
+}
+console.log(move(3, 6)); //15
+console.log(move(0, 4)); //8
+console.log(move(2, 5)); //12
