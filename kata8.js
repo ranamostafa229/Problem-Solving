@@ -2118,6 +2118,19 @@ move(3, 6) should equal 15
 function move(position, roll) {
   return position + roll * 2;
 }
-console.log(move(3, 6)); //15
-console.log(move(0, 4)); //8
-console.log(move(2, 5)); //12
+// console.log(move(3, 6)); //15
+// console.log(move(0, 4)); //8
+// console.log(move(2, 5)); //12
+
+/* (92) Regexp Basics - is it a digit?
+Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object
+is a single digit (0-9), false otherwise.
+
+*/
+String.prototype.digit = function () {
+  return /^\d$/.test(this); // ^ => start of string, $ => end of string
+};
+console.log("3".digit()); //true
+console.log("".digit()); //false
+console.log("34".digit()); //false
+console.log("a".digit()); //false
