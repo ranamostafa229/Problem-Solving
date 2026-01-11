@@ -2253,6 +2253,14 @@ function datingRange(age) {
   // }
 }
 
-console.log(datingRange(17)); // "15-20"
-console.log(datingRange(40)); // "27-66"
-console.log(datingRange(15)); // "14-16"
+// console.log(datingRange(17)); // "15-20"
+// console.log(datingRange(40)); // "27-66"
+// console.log(datingRange(15)); // "14-16"
+
+/* (97) Function 2 - squaring an argument
+Now you have to write a function that takes an argument and returns the square of it.
+*/
+function square(num) {
+  return num * num; // [OR] return num **2
+}
+console.log(square(2));
