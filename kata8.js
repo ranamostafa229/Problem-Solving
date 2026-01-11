@@ -2209,8 +2209,50 @@ This is because the distance between a and b is greater than 0, and a is less th
 function closeCompare(a, b, margin) {
   return margin >= Math.abs(a - b) || a === b ? 0 : a > b ? 1 : -1;
 }
-console.log(closeCompare(4, 5)); // -1
-console.log(closeCompare(5, 5)); // 0
-console.log(closeCompare(6, 5)); // 1
-console.log(closeCompare(2, 5, 3)); // 0
-console.log(closeCompare(3, 5, 1)); // -1
+// console.log(closeCompare(4, 5)); // -1
+// console.log(closeCompare(5, 5)); // 0
+// console.log(closeCompare(6, 5)); // 1
+// console.log(closeCompare(2, 5, 3)); // 0
+// console.log(closeCompare(3, 5, 1)); // -1
+
+/* (96) Age Range Compatibility Equation
+Everybody knows the classic "half your age plus seven" dating rule that a lot of people follow 
+(including myself). It's the 'recommended' age range in which to date someone.
+
+Min=(Age/2)+7
+Max=2⋅(Age - 7)
+
+Minimum age≤Your age≤Maximum age
+
+Task
+Given an integer (1 <= n <= 100) representing a person's age, return their minimum and maximum age range.
+
+This equation doesn't work when the age <= 14, so if the age <= 14, use this equation instead:
+
+min = age - 0.10 * age
+max = age + 0.10 * age
+You should floor all your answers so that an integer is given instead of a float 
+(which doesn't represent age). Return your answer in the form "[min]-[max]"
+
+Examples:
+age = 27   =>   "20-40"
+age = 5    =>   "4-5"
+age = 17   =>   "15-20"
+*/
+function datingRange(age) {
+  return age <= 14
+    ? `${Math.floor(age - 0.1 * age)}-${Math.floor(age + 0.1 * age)}`
+    : `${Math.floor(age / 2 + 7)}-${Math.floor(2 * (age - 7))}`;
+  // [OR]
+  // return `${min(age)}-${max(age)}`;
+  // function min(age) {
+  //   return Math.floor(age <= 14 ? age - 0.1 * age : age / 2 + 7);
+  // }
+  // function max(age) {
+  //   return Math.floor(age <= 14 ? age + 0.1 * age : 2 * (age - 7));
+  // }
+}
+
+console.log(datingRange(17)); // "15-20"
+console.log(datingRange(40)); // "27-66"
+console.log(datingRange(15)); // "14-16"
