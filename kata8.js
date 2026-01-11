@@ -2161,5 +2161,17 @@ function integrate(coefficient, exponent) {
   // [OR]
   // return `${coefficient / ++exponent}x^${exponent}`;
 }
-console.log(integrate(3, 2)); // "1x^3"
-console.log(integrate(12, 5)); //"2x^6"
+// console.log(integrate(3, 2)); // "1x^3"
+// console.log(integrate(12, 5)); //"2x^6"
+
+/* (94) Third Angle of a Triangle
+You are given two interior angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+
+Note: only positive integers will be tested
+*/
+function otherAngle(a, b) {
+  return 180 - (a + b);
+}
+console.log(otherAngle(30, 60)); //90
