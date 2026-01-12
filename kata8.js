@@ -2361,8 +2361,29 @@ function validateUsr(username) {
   // ^ => start of string, $ => end of string
   // $ => end of string
 }
-console.log(validateUsr("asddsa")); //true
-console.log(validateUsr("a")); //false
-console.log(validateUsr("Hass")); //false
-console.log(validateUsr("Hasd_12assssssasasasasasaasasasasas")); //false
-console.log(validateUsr("1234567890abcdefg")); //false
+// console.log(validateUsr("asddsa")); //true
+// console.log(validateUsr("a")); //false
+// console.log(validateUsr("Hass")); //false
+// console.log(validateUsr("Hasd_12assssssasasasasasaasasasasas")); //false
+// console.log(validateUsr("1234567890abcdefg")); //false
+
+/* (102) FIXME: Replace all dots
+The code provided is supposed replace all the dots . in the specified String str with dashes -
+But it's not working properly.
+
+Task
+Fix the bug so we can all go home early.
+
+Notes
+String str will never be null.
+
+var replaceDots = function(str) {
+  return str.replace(/./, '-');
+}
+*/
+const replaceDots = function (str) {
+  // return str.replace(/\./g, "-");
+  // [OR]
+  return str.replaceAll(".", "-");
+};
+console.log(replaceDots("one.two.three")); // "one-two-three"
