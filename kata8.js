@@ -2288,23 +2288,39 @@ Your function should return true if you're talking with The Loch Ness Moster, fa
 function isLochNessMonster(s) {
   return /tree fiddy|3\.50|three fifty/.test(s);
 }
-console.log(
-  isLochNessMonster(
-    "Your girlscout cookies are ready to ship. Your total comes to tree fiddy"
-  )
-); // true
-console.log(
-  isLochNessMonster(
-    "Howdy Pardner. Name's Pete Lexington. I reckon you're the kinda stiff who carries about tree fiddy?"
-  )
-); // true
-console.log(
-  isLochNessMonster(
-    "I'm from Scottland. I moved here to be with my family sir. Please, $3.50 would go a long way to help me find them"
-  )
-); // true
-console.log(
-  isLochNessMonster(
-    "I will be at the office by 3:50 or maybe a bit earlier, but definitely not before 3, to discuss with 50 clients"
-  )
-); // false
+// console.log(
+//   isLochNessMonster(
+//     "Your girlscout cookies are ready to ship. Your total comes to tree fiddy"
+//   )
+// ); // true
+// console.log(
+//   isLochNessMonster(
+//     "Howdy Pardner. Name's Pete Lexington. I reckon you're the kinda stiff who carries about tree fiddy?"
+//   )
+// ); // true
+// console.log(
+//   isLochNessMonster(
+//     "I'm from Scottland. I moved here to be with my family sir. Please, $3.50 would go a long way to help me find them"
+//   )
+// ); // true
+// console.log(
+//   isLochNessMonster(
+//     "I will be at the office by 3:50 or maybe a bit earlier, but definitely not before 3, to discuss with 50 clients"
+//   )
+// ); // false
+
+/* (99) validate code with simple regex
+Basic regex tasks. Write a function that takes in a numeric code of any length. 
+The function should check if the code begins with 1, 2, or 3 and return true if so. 
+Return false otherwise.
+You can assume the input will always be a number.
+*/
+function validateCode(code) {
+  return /^[123]/.test(code);
+  // [OR]
+  // return /[123]/.test(code.toString()[0]);
+  // return /(1|2|3)/.test(code.toString()[0]);
+}
+console.log(validateCode(123)); // true
+console.log(validateCode(248)); // true
+console.log(validateCode(8)); // false
