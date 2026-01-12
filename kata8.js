@@ -2344,6 +2344,25 @@ Examples
 function lowercaseCount(str) {
   return str.match(/[a-z]/g)?.length || 0;
 }
-console.log(lowercaseCount("abc")); //3
-console.log(lowercaseCount("abcABC123")); //3
-console.log(lowercaseCount("")); //0
+// console.log(lowercaseCount("abc")); //3
+// console.log(lowercaseCount("abcABC123")); //3
+// console.log(lowercaseCount("")); //0
+
+/* (101) Simple validation of a username with regex
+Write a simple regex to validate a username. Allowed characters are:
+
+lowercase letters,
+numbers,
+underscore
+Length should be between 4 and 16 characters (both included).
+*/
+function validateUsr(username) {
+  return /^[a-z0-9_]{4,16}$/.test(username);
+  // ^ => start of string, $ => end of string
+  // $ => end of string
+}
+console.log(validateUsr("asddsa")); //true
+console.log(validateUsr("a")); //false
+console.log(validateUsr("Hass")); //false
+console.log(validateUsr("Hasd_12assssssasasasasasaasasasasas")); //false
+console.log(validateUsr("1234567890abcdefg")); //false
