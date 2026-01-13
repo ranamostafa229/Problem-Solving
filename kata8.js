@@ -2511,14 +2511,23 @@ function animals(heads, legs) {
     return "No solutions";
   return [chickens, cows];
 }
-console.log(animals(72, 200)); // [44, 28]
-console.log(animals(116, 282)); // [91, 25]
-console.log(animals(-45, 5)); // "No solutions"
-console.log(animals(500, 0)); // "No solutions"
-console.log(animals(0, 500)); // expected to equal "No solutions"
-/*
+// console.log(animals(72, 200)); // [44, 28]
+// console.log(animals(116, 282)); // [91, 25]
+// console.log(animals(-45, 5)); // "No solutions"
+// console.log(animals(500, 0)); // "No solutions"
+// console.log(animals(0, 500)); // "No solutions"
 
-Invalid number of animals
-expected [ -370, 424 ] to deeply equal 'No solutions'
-Completed in 2ms
+/* (108) Formatting decimal places #0
+Each number should be formatted that it is rounded to two decimal places. 
+You don't need to check whether the input is a valid number because only valid numbers
+ are used in the tests.
+
+Example:    
+5.5589 is rounded 5.56   
+-3.3424 is rounded -3.34
 */
+function twoDecimalPlaces(n) {
+  return +n.toFixed(2);
+}
+console.log(twoDecimalPlaces(4.659725356)); //4.66
+console.log(twoDecimalPlaces(173735326.3783732637948948)); //173735326.38
