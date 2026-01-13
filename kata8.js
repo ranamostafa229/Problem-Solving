@@ -2448,5 +2448,25 @@ function playerRankUp(points) {
     "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
   );
 }
-console.log(playerRankUp(64)); // false
-console.log(playerRankUp(101)); // "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+// console.log(playerRankUp(64)); // false
+// console.log(playerRankUp(101)); // "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+
+/* (106) Regular Ball Super Ball
+Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
+
+ball1 = new Ball();
+ball2 = new Ball("super");
+
+ball1.ballType     //=> "regular"
+ball2.ballType     //=> "super"
+*/
+const Ball = function (ballType) {
+  return (this.ballType = ballType || "regular");
+};
+// [OR]
+// const Ball = function (ballType = "regular") {
+//   return (this.ballType = ballType);
+// };
+console.log(new Ball().ballType); // "regular"
+console.log(new Ball("super").ballType); // "super"
