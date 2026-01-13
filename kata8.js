@@ -2426,5 +2426,27 @@ function squaresOnly(array) {
   // return array.filter((num) => Number.isInteger(Math.sqrt(num)));
   // isInteger() method determines whether the passed value is an integer without fraction.
 }
-console.log(squaresOnly([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // [0,1,4,9]
-console.log(squaresOnly([15, 16, 25, 36, 47, 88])); // [16,25,36]
+// console.log(squaresOnly([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // [0,1,4,9]
+// console.log(squaresOnly([15, 16, 25, 36, 47, 88])); // [16,25,36]
+
+/* (105) Online RPG: player to qualifying stage?
+Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5. 
+A1 is the highest level a player can achieve.
+
+Now let's say the players wants to rank up to class E4. To do so the player needs to achieve 
+at least 100 points to enter the qualifying stage.
+
+Write a script that will check to see if the player has achieved at least 100 points in his class. 
+If so, he enters the qualifying stage.
+
+In that case, we return, "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.".
+Otherwise return, False/false (according to the language in use).
+*/
+function playerRankUp(points) {
+  return (
+    points >= 100 &&
+    "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+  );
+}
+console.log(playerRankUp(64)); // false
+console.log(playerRankUp(101)); // "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
