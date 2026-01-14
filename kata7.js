@@ -75,5 +75,18 @@ function incrementer(nums) {
   //   .map((num, index) => (num + index + 1).toString().slice(-1))
   //   .map(Number);
 }
-console.log(incrementer([4, 6, 9, 1, 3])); // [5, 8, 2, 5, 8]
-console.log(incrementer([])); // []
+// console.log(incrementer([4, 6, 9, 1, 3])); // [5, 8, 2, 5, 8]
+// console.log(incrementer([])); // []
+
+/* (4) Number of Decimal Digits
+Determine the total number of digits in the integer (n>=0) given as input to the function.
+For example, 9 is a single digit, 66 has 2 digits and 128685 has 6 digits.
+Be careful to avoid overflows/underflows.
+
+All inputs will be valid.
+*/
+function digits(n) {
+  return n.toString().length;
+}
+console.log(digits(128685)); // 6
+console.log(digits(0)); // 1
