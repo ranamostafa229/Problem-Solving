@@ -268,5 +268,18 @@ function isKiss(words) {
     : "Keep It Simple Stupid";
 }
 
-console.log(isKiss("Joe had a bad day")); // "Good work Joe!"
-console.log(isKiss("Sometimes joe cries for hours")); // "Keep It Simple Stupid"
+// console.log(isKiss("Joe had a bad day")); // "Good work Joe!"
+// console.log(isKiss("Sometimes joe cries for hours")); // "Keep It Simple Stupid"
+
+/* (9) Vowel Count
+Return the number (count) of vowels in the given string.
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+function getCount(str) {
+  return str.match(/[aeiou]/g)?.length || 0;
+}
+console.log(getCount("abracadabra")); // 5
+console.log(getCount("hello world")); // 3
+console.log(getCount("xyz")); // 0
