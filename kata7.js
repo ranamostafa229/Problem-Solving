@@ -353,38 +353,62 @@ function oddBall(arr) {
   // [OR]
   // return arr.some((num) => arr[num] === "odd");
 }
-console.log(
-  oddBall([
-    "even",
-    4,
-    "even",
-    7,
-    "even",
-    55,
-    "even",
-    6,
-    "even",
-    10,
-    "odd",
-    3,
-    "even",
-  ])
-); // true
-console.log(
-  oddBall([
-    "even",
-    4,
-    "even",
-    7,
-    "even",
-    55,
-    "even",
-    6,
-    "even",
-    9,
-    "odd",
-    3,
-    "even",
-  ])
-); // false
-console.log(oddBall(["even", 10, "odd", 2, "even"])); // true
+// console.log(
+//   oddBall([
+//     "even",
+//     4,
+//     "even",
+//     7,
+//     "even",
+//     55,
+//     "even",
+//     6,
+//     "even",
+//     10,
+//     "odd",
+//     3,
+//     "even",
+//   ])
+// ); // true
+// console.log(
+//   oddBall([
+//     "even",
+//     4,
+//     "even",
+//     7,
+//     "even",
+//     55,
+//     "even",
+//     6,
+//     "even",
+//     9,
+//     "odd",
+//     3,
+//     "even",
+//   ])
+// ); // false
+// console.log(oddBall(["even", 10, "odd", 2, "even"])); // true
+
+/* (13) Is n divisible by (...)?
+
+Create a function that checks if the first argument n is divisible by all other arguments
+(return true if no other arguments)
+
+Example:
+
+(6,1,3)--> true because 6 is divisible by 1 and 3
+(12,2)--> true because 12 is divisible by 2
+(100,5,4,10,25,20)--> true
+(12,7)--> false because 12 is not divisible by 7
+*/
+function isDivisible(...arg) {
+  return arg.slice(1).every((num) => arg[0] % num === 0);
+}
+// [OR]
+// function isDivisible(firstNum, ...otherNums) {
+//   return otherNums.every((num) => firstNum % num === 0);
+// }
+console.log(isDivisible(3, 3, 4)); // false
+console.log(isDivisible(3, 4, 3)); // false
+console.log(isDivisible(12, 3, 4)); // true
+console.log(isDivisible(8)); // true
