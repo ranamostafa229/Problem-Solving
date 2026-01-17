@@ -555,15 +555,15 @@ function matrix(array) {
   // } // as we need the index where row index = column index
   // return array;
 }
-console.log(
-  matrix([
-    [-1, 4, -5, -9, 3],
-    [6, -4, -7, 4, -5],
-    [3, 5, 4, -9, -1],
-    [1, 5, -7, -8, -9],
-    [-3, 2, 1, -5, 6],
-  ])
-);
+// console.log(
+//   matrix([
+//     [-1, 4, -5, -9, 3],
+//     [6, -4, -7, 4, -5],
+//     [3, 5, 4, -9, -1],
+//     [1, 5, -7, -8, -9],
+//     [-3, 2, 1, -5, 6],
+//   ])
+// );
 // [
 //   [ 0,  4, -5, -9,  3 ],
 //   [ 6,  0, -7,  4, -5 ],
@@ -633,6 +633,32 @@ function findLongest(array) {
     cur.toString().length > acc.toString().length ? cur : acc
   );
 }
-console.log(findLongest([1, 10, 100])); // 100
-console.log(findLongest([9000, 8, 800])); // 9000
-console.log(findLongest([8, 900, 500])); // 900
+// console.log(findLongest([1, 10, 100])); // 100
+// console.log(findLongest([9000, 8, 800])); // 9000
+// console.log(findLongest([8, 900, 500])); // 900
+
+/* (20) Fruit string calculator
+You are given a string of words and numbers. Extract the expression including:
+
+the operator: either addition ("gains") or subtraction ("loses")
+the two numbers that we are operating on
+Return the result of the calculation.
+
+Notes:
+
+"loses" and "gains" are the only two words describing operators
+No fruit debts nor bitten apples = The numbers are integers and no negatives
+Examples
+"Panda has 48 apples and loses 4"  -->  44
+"Jerry has 34 apples and gains 6"  -->  40
+*/
+function calculate(string) {
+  const [num1, operator, num2] = string
+    .match(/(\d+)\s.*\s(gains|loses)\s(\d+)/)
+    .slice(1);
+  return operator === "gains"
+    ? parseInt(num1) + parseInt(num2)
+    : parseInt(num1) - parseInt(num2);
+}
+console.log(calculate("Panda has 48 apples and loses 4")); // 44
+console.log(calculate("Jerry has 34 apples and gains 6")); // 40
