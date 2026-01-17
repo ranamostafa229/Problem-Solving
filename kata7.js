@@ -485,7 +485,28 @@ function quicksum(packet) {
         )
     : 0;
 }
-console.log(quicksum("ACM")); // 46
-console.log(quicksum("A C M")); // 75
-console.log(quicksum("???")); // 0
-console.log(quicksum("axg ")); // 0
+// console.log(quicksum("ACM")); // 46
+// console.log(quicksum("A C M")); // 75
+// console.log(quicksum("???")); // 0
+// console.log(quicksum("axg ")); // 0
+
+/* (16) Summing a number's digits
+Write a function which takes a number as input and returns the sum of the absolute value 
+of each of the number's decimal digits.
+
+For example: (Input --> Output)
+
+10 --> 1
+99 --> 18
+-32 --> 5
+
+*/
+function sumDigits(number) {
+  return [...String(Math.abs(number))].reduce(
+    (acc, cur) => acc + Number(cur),
+    0
+  );
+}
+console.log(sumDigits(10)); // 1
+console.log(sumDigits(99)); // 18
+console.log(sumDigits(-32)); // 5
