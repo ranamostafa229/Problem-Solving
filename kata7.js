@@ -620,4 +620,19 @@ function bubblesortOnce(a) {
   // }
   // return arr;
 }
-console.log(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8])); // [7, 5, 3, 1, 2, 4, 6, 8, 9]
+// console.log(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8])); // [7, 5, 3, 1, 2, 4, 6, 8, 9]
+
+/* (19) Most digits
+Find the number with the most digits.
+
+If two numbers in the argument array have the same number of digits, return the first one in the array.
+
+*/
+function findLongest(array) {
+  return array.reduce((acc, cur) =>
+    cur.toString().length > acc.toString().length ? cur : acc
+  );
+}
+console.log(findLongest([1, 10, 100])); // 100
+console.log(findLongest([9000, 8, 800])); // 9000
+console.log(findLongest([8, 900, 500])); // 900
