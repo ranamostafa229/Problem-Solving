@@ -747,4 +747,24 @@ function capitalsFirst(str) {
   //   })
   //   .join(" ");
 }
-console.log(capitalsFirst("hey You, Sort me Already!")); // "You, Sort Already! hey me"
+// console.log(capitalsFirst("hey You, Sort me Already!")); // "You, Sort Already! hey me"
+
+/* (25) String ends with?
+Complete the solution so that it returns true if the first argument(string) passed in ends 
+with the 2nd argument (also a string).
+
+Examples:
+
+Inputs: "abc", "bc"
+Output: true
+
+Inputs: "abc", "d"
+Output: false
+
+*/
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+console.log(solution("abcde", "cde")); // true
+console.log(solution("empty ending", "")); // true
+console.log(solution("", "empty string")); // false
