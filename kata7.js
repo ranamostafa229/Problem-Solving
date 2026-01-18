@@ -698,6 +698,21 @@ function repeats(arr) {
     .filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))
     .reduce((acc, cur) => acc + cur, 0);
 }
-console.log(repeats([4, 5, 7, 5, 4, 8])); // 15
-console.log(repeats([9, 10, 19, 13, 19, 13])); // 19
-console.log(repeats([16, 0, 11, 4, 8, 16, 0, 11])); // 12
+// console.log(repeats([4, 5, 7, 5, 4, 8])); // 15
+// console.log(repeats([9, 10, 19, 13, 19, 13])); // 19
+// console.log(repeats([16, 0, 11, 4, 8, 16, 0, 11])); // 12
+
+/* (23) All unique
+Write a program to determine if a string contains only unique characters. 
+Return true if it does and false otherwise.
+
+The string may contain any of the 128 ASCII characters. Characters are case-sensitive, 
+e.g. 'a' and 'A' are considered different characters.
+
+*/
+function hasUniqueChars(str) {
+  return new Set(str).size === str.length;
+}
+console.log(hasUniqueChars("  nAa")); // false
+console.log(hasUniqueChars("abcdef")); // true
+console.log(hasUniqueChars("aA")); // true
