@@ -679,7 +679,25 @@ function onlyOne(...flags) {
   // [OR]
   // return flags.filter(Boolean).length === 1;
 }
-console.log(onlyOne()); // False
-console.log(onlyOne(true, false, false)); // True
-console.log(onlyOne(true, false, false, true)); // False
-console.log(onlyOne(true, false)); //true
+// console.log(onlyOne()); // False
+// console.log(onlyOne(true, false, false)); // True
+// console.log(onlyOne(true, false, false, true)); // False
+// console.log(onlyOne(true, false)); //true
+
+/* (22) Sum of array singles
+In this Kata, you will be given an array of numbers in which two numbers occur once 
+and the rest occur only twice. Your task will be to return the sum of the numbers that occur only once.
+
+For example, repeats([4,5,7,5,4,8]) = 15 because only the numbers 7 and 8 occur once, 
+and their sum is 15. Every other number occurs twice.
+
+More examples in the test cases.
+*/
+function repeats(arr) {
+  return arr
+    .filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))
+    .reduce((acc, cur) => acc + cur, 0);
+}
+console.log(repeats([4, 5, 7, 5, 4, 8])); // 15
+console.log(repeats([9, 10, 19, 13, 19, 13])); // 19
+console.log(repeats([16, 0, 11, 4, 8, 16, 0, 11])); // 12
