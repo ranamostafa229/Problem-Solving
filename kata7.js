@@ -178,19 +178,19 @@ var sing = function () {
     i === 1
       ? lycrics.push(
           `${i} bottle of beer on the wall, ${i} bottle of beer.`,
-          `Take one down and pass it around, no more bottles of beer on the wall.`
+          `Take one down and pass it around, no more bottles of beer on the wall.`,
         )
       : i > 1
-      ? lycrics.push(
-          `${i} bottles of beer on the wall, ${i} bottles of beer.`,
-          `Take one down and pass it around, ${i - 1} ${
-            i - 1 > 1 ? "bottles" : "bottle"
-          } of beer on the wall.`
-        )
-      : lycrics.push(
-          "No more bottles of beer on the wall, no more bottles of beer.",
-          `Go to the store and buy some more, 99 bottles of beer on the wall.`
-        );
+        ? lycrics.push(
+            `${i} bottles of beer on the wall, ${i} bottles of beer.`,
+            `Take one down and pass it around, ${i - 1} ${
+              i - 1 > 1 ? "bottles" : "bottle"
+            } of beer on the wall.`,
+          )
+        : lycrics.push(
+            "No more bottles of beer on the wall, no more bottles of beer.",
+            `Go to the store and buy some more, 99 bottles of beer on the wall.`,
+          );
   }
   return lycrics;
 };
@@ -226,7 +226,7 @@ function playerManager(players) {
         index % 2 === 0
           ? [...acc, { player: cur.trim(), contact: +arr[index + 1].trim() }]
           : acc,
-      []
+      [],
     );
 }
 // console.log(playerManager("John Doe, 8167238327, Jane Doe, 8163723827")); // [{player: "John Doe", contact: 8167238327}, {player: "Jane Doe", contact: 8163723827}]
@@ -306,7 +306,7 @@ function validateWord(s) {
       s
         .toLowerCase()
         .split("")
-        .map((char) => s.toLowerCase().split(char).length - 1)
+        .map((char) => s.toLowerCase().split(char).length - 1),
     ).size === 1
   );
 }
@@ -481,7 +481,7 @@ function quicksum(packet) {
             acc +
             (cur !== " " ? cur.charCodeAt(0) - "A".charCodeAt(0) + 1 : 0) *
               (i + 1),
-          0
+          0,
         )
     : 0;
 }
@@ -504,7 +504,7 @@ For example: (Input --> Output)
 function sumDigits(number) {
   return [...String(Math.abs(number))].reduce(
     (acc, cur) => acc + Number(cur),
-    0
+    0,
   );
 }
 // console.log(sumDigits(10)); // 1
@@ -630,7 +630,7 @@ If two numbers in the argument array have the same number of digits, return the 
 */
 function findLongest(array) {
   return array.reduce((acc, cur) =>
-    cur.toString().length > acc.toString().length ? cur : acc
+    cur.toString().length > acc.toString().length ? cur : acc,
   );
 }
 // console.log(findLongest([1, 10, 100])); // 100
@@ -660,5 +660,26 @@ function calculate(string) {
     ? parseInt(num1) + parseInt(num2)
     : parseInt(num1) - parseInt(num2);
 }
-console.log(calculate("Panda has 48 apples and loses 4")); // 44
-console.log(calculate("Jerry has 34 apples and gains 6")); // 40
+// console.log(calculate("Panda has 48 apples and loses 4")); // 44
+// console.log(calculate("Jerry has 34 apples and gains 6")); // 40
+
+/* (21) Only One 
+Task: Write a function which returns True if ONLY ONE of the boolean flag is True, 
+otherwise return False. If there are no boolean flag, return False
+
+Input	Expected Output
+[]	False
+[True, False, False]	True
+[True, False, False, True]	False
+[False, False, False, False]	False
+
+*/
+function onlyOne(...flags) {
+  return flags.filter((flag) => flag).length === 1;
+  // [OR]
+  // return flags.filter(Boolean).length === 1;
+}
+console.log(onlyOne()); // False
+console.log(onlyOne(true, false, false)); // True
+console.log(onlyOne(true, false, false, true)); // False
+console.log(onlyOne(true, false)); //true
