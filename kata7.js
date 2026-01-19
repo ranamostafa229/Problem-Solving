@@ -840,15 +840,43 @@ function sumItUp(numbersWithBases) {
     0,
   );
 }
+// console.log(
+//   sumItUp([
+//     ["101", 2],
+//     ["10", 8],
+//   ]),
+// ); // 13
+// console.log(
+//   sumItUp([
+//     ["ABC", 16],
+//     ["11", 2],
+//   ]),
+// ); // 2751
+
+/* (29) Binary to string
+Your computer has forgotten how to speak ASCII! (or Unicode, whatever) It can only communicate in binary, 
+and it has something important to tell you. Write a function which will receive a long string 
+of binary code and convert it to a string. Remember, in Python binary output starts with '0b'.
+
+As an example: binary_to_string('0b10000110b11000010b1110100') == 'Cat'
+
+Input may consist of upper and lower case letters and numbers, in binary form of course,
+as well as special symbols. The input to your function will always be one string of binary.
+
+*/
+function binaryToString(binary) {
+  return binary
+    .split("0b")
+    .slice(1) // skip the empty string from the start
+    .map((i) => String.fromCharCode(parseInt(i, 2)))
+    .join("");
+  // parseInt in base 2 converts binary to decimal
+  // String.fromCharCode converts decimal to character
+}
+
+console.log(binaryToString("0b10000110b11000010b1110100")); // 'Cat'
 console.log(
-  sumItUp([
-    ["101", 2],
-    ["10", 8],
-  ]),
-); // 13
-console.log(
-  sumItUp([
-    ["ABC", 16],
-    ["11", 2],
-  ]),
-); // 2751
+  binaryToString(
+    "0b10010000b11001010b11011000b11011000b11011110b1000000b10101110b11011110b11100100b11011000b11001000b100001",
+  ),
+); // 'Hello World'
