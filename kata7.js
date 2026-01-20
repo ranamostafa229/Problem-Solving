@@ -978,17 +978,39 @@ function avgArray(arr) {
   // }
   // return result;
 }
-console.log(
-  avgArray([
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-  ]),
-); // [3, 4, 5, 6]
-console.log(
-  avgArray([
-    [2, 3, 9, 10, 7],
-    [12, 6, 89, 45, 3],
-    [9, 12, 56, 10, 34],
-    [67, 23, 1, 88, 34],
-  ]),
-); //[22.5, 11, 38.75, 38.25, 19.5]
+// console.log(
+//   avgArray([
+//     [1, 2, 3, 4],
+//     [5, 6, 7, 8],
+//   ]),
+// ); // [3, 4, 5, 6]
+// console.log(
+//   avgArray([
+//     [2, 3, 9, 10, 7],
+//     [12, 6, 89, 45, 3],
+//     [9, 12, 56, 10, 34],
+//     [67, 23, 1, 88, 34],
+//   ]),
+// ); //[22.5, 11, 38.75, 38.25, 19.5]
+
+/* (33) Simple template
+Implement function createTemplate which takes string with tags wrapped in {{brackets}} as input 
+and returns closure, which can fill string with data (flat object, where keys are tag names).
+
+let personTmpl = createTemplate("{{name}} likes {{animalType}}");
+personTmpl({ name: "John", animalType: "dogs" }); // John likes dogs
+When key doesn't exist in the map, put there empty string.
+
+*/
+function createTemplate(template) {
+  return function (data) {
+    return template.replace(/\{\{(\w+)\}\}/g, (_, key) => data[key] || "");
+  };
+}
+
+let personTmpl = createTemplate("{{name}} likes {{animalType}}");
+console.log(personTmpl({ name: "John", animalType: "dogs" }));
+// Output: John likes dogs
+
+console.log(personTmpl({ name: "Alice" }));
+// Output: Alice likes
