@@ -1009,8 +1009,32 @@ function createTemplate(template) {
 }
 
 let personTmpl = createTemplate("{{name}} likes {{animalType}}");
-console.log(personTmpl({ name: "John", animalType: "dogs" }));
+// console.log(personTmpl({ name: "John", animalType: "dogs" }));
 // Output: John likes dogs
 
-console.log(personTmpl({ name: "Alice" }));
+// console.log(personTmpl({ name: "Alice" }));
 // Output: Alice likes
+
+/* (34) Stanton measure
+The Stanton measure of an array is defined as follows:
+Let n be the number of times the value 1 appears in the array.
+The Stanton measure is then the number of times n appears in the array.
+
+Task
+Write a function that takes an integer array and returns its Stanton measure.
+
+Examples
+For [1, 4, 3, 2, 1, 2, 3, 2]:
+1 appears 2 times → 2 appears 3 times → Stanton measure = 3.
+
+For [1, 4, 1, 2, 11, 2, 3, 1]:
+1 appears 3 times → 3 appears 1 time → Stanton measure = 1.
+
+*/
+function stantonMeasure(a) {
+  return a.filter((num) => num === a.filter((num) => num === 1).length).length;
+  // [OR]
+  // const count = (n) => a.filter((num) => num === n).length;
+  // return count(count(1));
+}
+console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2])); //3
