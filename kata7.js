@@ -901,7 +901,30 @@ function consecutive(array) {
     ? Math.max(...array) - Math.min(...array) + 1 - array.length
     : 0;
 }
-console.log(consecutive([4, 8, 6])); // 2
-console.log(consecutive([-1, -5])); // 3
-console.log(consecutive([1])); // 0
-console.log(consecutive([])); // 0
+// console.log(consecutive([4, 8, 6])); // 2
+// console.log(consecutive([-1, -5])); // 3
+// console.log(consecutive([1])); // 0
+// console.log(consecutive([])); // 0
+
+/* (31) Anagram Detection
+An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+
+Note: anagrams are case insensitive
+
+Complete the function to return true if the two arguments given are anagrams of each other; 
+return false otherwise.
+
+Examples
+"foefet" is an anagram of "toffee"
+
+"Buckethead" is an anagram of "DeathCubeK"
+
+*/
+const isAnagram = function (test, original) {
+  const testSorted = (str) => str.toLowerCase().split("").sort().join("");
+  return testSorted(test) === testSorted(original);
+};
+console.log(isAnagram("foefet", "toffee")); // true
+console.log(isAnagram("Buckethead", "DeathCubeK")); // true
+console.log(isAnagram("ound", "round")); // false
+console.log(isAnagram("dumble", "bumble")); // false
