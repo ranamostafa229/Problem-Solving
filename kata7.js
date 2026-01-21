@@ -1058,6 +1058,21 @@ function search(budget, prices) {
     .sort((a, b) => a - b)
     .toString();
 }
-console.log(search(3, [6, 1, 2, 9, 2])); // "1, 2, 2"
-console.log(search(14, [7, 3, 23, 9, 14, 20, 7])); // "3,7,7, 9, 14"
-console.log(search(0, [6, 1, 2, 9, 2])); // ""
+// console.log(search(3, [6, 1, 2, 9, 2])); // "1, 2, 2"
+// console.log(search(14, [7, 3, 23, 9, 14, 20, 7])); // "3,7,7, 9, 14"
+// console.log(search(0, [6, 1, 2, 9, 2])); // ""
+
+/* (36) Alphabetically ordered
+Your task is very simple. Just write a function that takes an input string of lowercase letters
+and returns true/false depending on whether the string is in alphabetical order or not.
+
+Examples (input -> output)
+"kata" -> false ('a' comes after 'k')
+"ant" -> true (all characters are in alphabetical order)
+
+*/
+function alphabetic(s) {
+  return [...s].sort((a, b) => a.localeCompare(b)).join("") === s;
+}
+console.log(alphabetic("asd")); //false
+console.log(alphabetic("door")); //true
