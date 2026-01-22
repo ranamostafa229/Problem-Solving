@@ -1116,4 +1116,30 @@ function capMe(names) {
     (name) => name[0].toUpperCase() + name.toLowerCase().slice(1),
   );
 }
-console.log(capMe(["RALPH", "GEORGIA", "CHRISTINA"])); // ["Ralph", "Georgia", "Christina"]
+// console.log(capMe(["RALPH", "GEORGIA", "CHRISTINA"])); // ["Ralph", "Georgia", "Christina"]
+
+/* (39) Initialize my name
+Some people just have a first name; some people have first and last names and some people have first, 
+middle and last names.
+
+You task is to initialize the middle names (if there is any).
+
+Examples
+'Jack Ryan'                   => 'Jack Ryan'
+'Lois Mary Lane'              => 'Lois M. Lane'
+'Dimitri'                     => 'Dimitri'
+'Alice Betty Catherine Davis' => 'Alice B. C. Davis'
+
+*/
+function initializeNames(name) {
+  return name
+    .split(" ")
+    .map((match, index, arr) =>
+      index === 0 || index === arr.length - 1 ? match : `${match[0]}.`,
+    )
+    .join(" ");
+}
+console.log(initializeNames("Alice Betty Catherine Davis")); // "Alice B. C. Davis"
+console.log(initializeNames("Dimitri")); // "Dimitri"
+console.log(initializeNames("Lois Mary Lane")); // "Lois M. Lane"
+console.log(initializeNames("Jack Ryan")); // "Jack Ryan"
