@@ -1101,4 +1101,19 @@ instructions = [1,2,4,3,5]
 function liftoff(instructions) {
   return instructions.sort((a, b) => b - a).join(" ") + " liftoff!";
 }
-console.log(liftoff([2, 8, 10, 9, 1, 3, 4, 7, 6, 5])); // "10 9 8 7 6 5 4 3 2 1 liftoff!"
+// console.log(liftoff([2, 8, 10, 9, 1, 3, 4, 7, 6, 5])); // "10 9 8 7 6 5 4 3 2 1 liftoff!"
+
+/* (38) Name Array Capping
+Create a function that accepts an array of names, and returns an array of each name with
+its first letter capitalized and the remainder in lowercase.
+
+Examples
+["jo", "nelson", "jurie"] -->  ["Jo", "Nelson", "Jurie"]
+["KARLY", "DANIEL", "KELSEY"] --> ["Karly", "Daniel", "Kelsey"]
+*/
+function capMe(names) {
+  return names.map(
+    (name) => name[0].toUpperCase() + name.toLowerCase().slice(1),
+  );
+}
+console.log(capMe(["RALPH", "GEORGIA", "CHRISTINA"])); // ["Ralph", "Georgia", "Christina"]
