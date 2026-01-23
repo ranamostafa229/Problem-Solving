@@ -1217,9 +1217,28 @@ function isValid(idn) {
   // [OR]
   // return /^[A-Za-z_$][\w$]*$/.test(idn); // \w = [A-Za-z0-9_]
 }
-console.log(isValid("$dollar$igns")); // true
-console.log(isValid("kebab-case")); // false
-console.log(isValid("snake_case")); // true
-console.log(isValid("!Ok")); // false
-console.log(isValid("")); //false
-console.log(isValid("no no")); //false
+// console.log(isValid("$dollar$igns")); // true
+// console.log(isValid("kebab-case")); // false
+// console.log(isValid("snake_case")); // true
+// console.log(isValid("!Ok")); // false
+// console.log(isValid("")); //false
+// console.log(isValid("no no")); //false
+
+/* (42) max diff - easy
+
+You must implement a function that returns the difference between the largest and
+the smallest value in a given list / array (lst) received as the parameter.
+
+lst contains integers, that means it may contain some negative numbers
+if lst is empty or contains a single element, return 0
+lst is not sorted
+[1, 2, 3, 4]   //  returns 3 because 4 -   1  == 3
+[1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
+
+*/
+function maxDiff(list) {
+  return list.length >= 1 ? Math.max(...list) - Math.min(...list) : 0;
+}
+console.log(maxDiff([0, 1, 2, 3, 4, 5, 6])); // 6
+console.log(maxDiff([-0, 1, 2, -3, 4, 5, -6])); //11
+console.log(maxDiff([16])); // 0
