@@ -1276,6 +1276,36 @@ function counterEffect(hitCount) {
     Array.from({ length: +num + 1 }, (_, i) => i),
   );
 }
-console.log(counterEffect("1250")); // [ [0,1], [0,1,2], [0,1,2,3,4,5], [0] ]
-console.log(counterEffect("0050")); // [ [0], [0], [0,1,2,3,4,5], [0] ]
-console.log(counterEffect("0000")); // [ [0], [0], [0], [0] ]
+// console.log(counterEffect("1250")); // [ [0,1], [0,1,2], [0,1,2,3,4,5], [0] ]
+// console.log(counterEffect("0050")); // [ [0], [0], [0,1,2,3,4,5], [0] ]
+// console.log(counterEffect("0000")); // [ [0], [0], [0], [0] ]
+
+/* (44) Sorted? yes? no? how?
+Complete the method which accepts an array of integers, and returns one of the following:
+
+"yes, ascending" - if the numbers in the array are sorted in an ascending order
+"yes, descending" - if the numbers in the array are sorted in a descending order
+"no" - otherwise
+The order does not have to be strict: a sorted array can contain consecutive duplicates, 
+e.g. [1, 1, 2, 3] is sorted in ascending order.
+
+It is guaranteed that there will always be a unique valid answer. More precisely:
+
+there will be no arrays with less than 2 elements
+there will be no arrays where all elements are equal
+
+*/
+function isSortedAndHow(array) {
+  const accending = [...array].sort((a, b) => a - b);
+  const descending = [...array].sort((a, b) => b - a);
+  // [..array] => to make a copy so don't change the original
+  return array.every((e, i) => e === accending[i])
+    ? "yes, ascending"
+    : array.every((e, i) => e === descending[i])
+      ? "yes, descending"
+      : "no";
+}
+console.log(isSortedAndHow([1, 3, 9, 4])); // no
+console.log(isSortedAndHow([1, 2, 3, 4, 5])); // yes, ascending
+console.log(isSortedAndHow([4, 3, 2, 1])); // yes, descending
+console.log(isSortedAndHow([1, 1, 2, 3])); // yes, ascending
