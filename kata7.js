@@ -1186,8 +1186,40 @@ function anArgument(...arg) {
       }.`
     : `You gave me 1 argument and it is "${arg[0]}".`;
 }
-console.log(anArgument("chairs", "table", "lamp", "sideboard")); // "You gave me 4 arguments and they are "chairs", "table", "lamp" and "sideboard"."
-console.log(anArgument("pigs", "giraffes", "unicorns")); // "You gave me 3 arguments and they are "pigs", "giraffes" and "unicorns"."
-console.log(anArgument("pigs", "giraffes")); // "You gave me 2 arguments and they are "pigs" and "giraffes"."
-console.log(anArgument("pigs")); // "You gave me 1 argument and it is "pigs"."
-console.log(anArgument()); // "You didn't give me any arguments."
+// console.log(anArgument("chairs", "table", "lamp", "sideboard")); // "You gave me 4 arguments and they are "chairs", "table", "lamp" and "sideboard"."
+// console.log(anArgument("pigs", "giraffes", "unicorns")); // "You gave me 3 arguments and they are "pigs", "giraffes" and "unicorns"."
+// console.log(anArgument("pigs", "giraffes")); // "You gave me 2 arguments and they are "pigs" and "giraffes"."
+// console.log(anArgument("pigs")); // "You gave me 1 argument and it is "pigs"."
+// console.log(anArgument()); // "You didn't give me any arguments."
+
+/* (41) Is valid identifier?
+Given a string, determine if it's a valid identifier.
+
+Here is the syntax for valid identifiers:
+Each identifier must have at least one character.
+The first character must be picked from: alpha, underscore, or dollar sign. The first character
+cannot be a digit.
+The rest of the characters (besides the first) can be from: alpha, digit, underscore, 
+or dollar sign. In other words, it can be any valid identifier character.
+
+Examples of valid identifiers:
+i
+wo_rd
+b2h
+Examples of invalid identifiers:
+1i
+wo rd
+!b2h
+
+*/
+function isValid(idn) {
+  return /^[A-Za-z_$][A-Za-z0_9_$]*$/.test(idn);
+  // [OR]
+  // return /^[A-Za-z_$][\w$]*$/.test(idn); // \w = [A-Za-z0-9_]
+}
+console.log(isValid("$dollar$igns")); // true
+console.log(isValid("kebab-case")); // false
+console.log(isValid("snake_case")); // true
+console.log(isValid("!Ok")); // false
+console.log(isValid("")); //false
+console.log(isValid("no no")); //false
