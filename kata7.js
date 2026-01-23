@@ -1305,7 +1305,29 @@ function isSortedAndHow(array) {
       ? "yes, descending"
       : "no";
 }
-console.log(isSortedAndHow([1, 3, 9, 4])); // no
-console.log(isSortedAndHow([1, 2, 3, 4, 5])); // yes, ascending
-console.log(isSortedAndHow([4, 3, 2, 1])); // yes, descending
-console.log(isSortedAndHow([1, 1, 2, 3])); // yes, ascending
+// console.log(isSortedAndHow([1, 3, 9, 4])); // no
+// console.log(isSortedAndHow([1, 2, 3, 4, 5])); // yes, ascending
+// console.log(isSortedAndHow([4, 3, 2, 1])); // yes, descending
+// console.log(isSortedAndHow([1, 1, 2, 3])); // yes, ascending
+
+/* (45) shorter concat [reverse longer]
+Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+Strings a and b may be empty, but not null (In C# strings may also be null. 
+Treat them as if they are empty.).
+If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+*/
+function shorterReverseLonger(a, b) {
+  return Math.max(a.length, b.length) === a.length
+    ? b + [...a].reverse().join("") + b
+    : a + [...b].reverse().join("") + a;
+  // [OR]
+  // return a.length >= b.length
+  //   ? b + [...a].reverse().join("") + b
+  //   : a + [...b].reverse().join("") + a;
+}
+console.log(shorterReverseLonger("first", "abcde")); // "abcdetsrifabcde"
+console.log(shorterReverseLonger("fghi", "abcde")); // "fghiedcbafghi"
