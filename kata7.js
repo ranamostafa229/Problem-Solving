@@ -1239,6 +1239,43 @@ lst is not sorted
 function maxDiff(list) {
   return list.length >= 1 ? Math.max(...list) - Math.min(...list) : 0;
 }
-console.log(maxDiff([0, 1, 2, 3, 4, 5, 6])); // 6
-console.log(maxDiff([-0, 1, 2, -3, 4, 5, -6])); //11
-console.log(maxDiff([16])); // 0
+// console.log(maxDiff([0, 1, 2, 3, 4, 5, 6])); // 6
+// console.log(maxDiff([-0, 1, 2, -3, 4, 5, -6])); //11
+// console.log(maxDiff([16])); // 0
+
+/* (43) Hit Count
+You are the developer working on a website which features a large counter on its homepage, 
+proudly displaying the number of happy customers who have downloaded your company's software.
+
+You have been tasked with adding an effect to this counter to make it more interesting.
+
+Instead of just displaying the count value immediately when the page loads, 
+we want to create the effect of each digit cycling through its preceding numbers
+before stopping on the actual value.
+
+
+Task
+As a step towards achieving this; you have decided to create a function that will produce 
+a multi-dimensional array out of the hit count value. 
+Each inner dimension of the array represents an individual digit in the hit count, 
+and will include all numbers that come before it, going back to 0.
+
+Rules
+The function will take one argument which will be a four-character string representing hit count
+The function must return a multi-dimensional array containing four inner arrays of integers
+The final value in each inner array must be the actual value to be displayed
+Examples
+"1250" --> [ [0,1], [0,1,2], [0,1,2,3,4,5], [0] ]
+"0050" --> [ [0], [0], [0,1,2,3,4,5], [0] ]
+"0000" --> [ [0], [0], [0], [0] ]
+
+
+*/
+function counterEffect(hitCount) {
+  return [...hitCount].map((num) =>
+    Array.from({ length: +num + 1 }, (_, i) => i),
+  );
+}
+console.log(counterEffect("1250")); // [ [0,1], [0,1,2], [0,1,2,3,4,5], [0] ]
+console.log(counterEffect("0050")); // [ [0], [0], [0,1,2,3,4,5], [0] ]
+console.log(counterEffect("0000")); // [ [0], [0], [0], [0] ]
