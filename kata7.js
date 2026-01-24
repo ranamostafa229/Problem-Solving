@@ -1393,12 +1393,38 @@ flatten([[[1,2,3]]])  ==> [[1,2,3]]
 function flatten(array) {
   return array.flat();
 }
-console.log(flatten([1, 2, 3])); // [1,2,3]
-console.log(
-  flatten([
-    [1, 2, 3],
-    ["a", "b", "c"],
-    [1, 2, 3],
-  ]),
-); // [1,2,3,"a","b","c",1,2,3]
-console.log(flatten([[[1, 2, 3]]])); // [[1,2,3]]
+// console.log(flatten([1, 2, 3])); // [1,2,3]
+// console.log(
+//   flatten([
+//     [1, 2, 3],
+//     ["a", "b", "c"],
+//     [1, 2, 3],
+//   ]),
+// ); // [1,2,3,"a","b","c",1,2,3]
+// console.log(flatten([[[1, 2, 3]]])); // [[1,2,3]]
+
+/* (49) Swap two elements
+Return an array that contains exactly the same elements as the input array, 
+but with elements a and b swapped.
+
+If the array has multiple copies of a, swap only the first one that appears in the array.
+If the array has multiple copies of b, swap only the last one that appears in the array.
+For example:
+
+([1, 2, 3, 4], 2, 4) -> [1, 4, 3, 2]
+([1, 2, 3, 4, 1, 2, 3, 4], 2, 4) -> [1, 4, 3, 4, 1, 2, 3, 2]
+
+*/
+function swapTwo(array, a, b) {
+  const firstIndex = array.indexOf(a);
+  const lastIndex = array.lastIndexOf(b);
+  array[firstIndex] = b;
+  array[lastIndex] = a;
+  return array;
+  // [OR]
+  // return array.map((e, i) =>
+  //   array.indexOf(a) === i ? b : array.lastIndexOf(b) === i ? a : e,
+  // );
+}
+console.log(swapTwo([1, 2, 3, 4], 2, 4)); // [1, 4, 3, 2]
+console.log(swapTwo([1, 2, 3, 4, 1, 2, 3, 4], 2, 4)); // [1, 4, 3, 4, 1, 2, 3, 2]
