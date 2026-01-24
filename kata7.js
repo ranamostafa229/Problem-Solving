@@ -1329,5 +1329,24 @@ function shorterReverseLonger(a, b) {
   //   ? b + [...a].reverse().join("") + b
   //   : a + [...b].reverse().join("") + a;
 }
-console.log(shorterReverseLonger("first", "abcde")); // "abcdetsrifabcde"
-console.log(shorterReverseLonger("fghi", "abcde")); // "fghiedcbafghi"
+// console.log(shorterReverseLonger("first", "abcde")); // "abcdetsrifabcde"
+// console.log(shorterReverseLonger("fghi", "abcde")); // "fghiedcbafghi"
+
+/* (46) Reverse words
+Complete the function that accepts a string parameter, 
+and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+
+*/
+function reverseWords(str) {
+  return str
+    .split(" ")
+    .map((w) => [...w].reverse().join(""))
+    .join(" ");
+  // [OR]
+  // return str.replace(/\S+/g, (w) => [...w].reverse().join(""));
+}
+console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); // "ehT kciuq nworb xof spmuj revo eht yzal .god"
