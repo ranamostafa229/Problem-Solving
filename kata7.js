@@ -1349,4 +1349,34 @@ function reverseWords(str) {
   // [OR]
   // return str.replace(/\S+/g, (w) => [...w].reverse().join(""));
 }
-console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); // "ehT kciuq nworb xof spmuj revo eht yzal .god"
+// console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); // "ehT kciuq nworb xof spmuj revo eht yzal .god"
+
+/* (47) Jenny the youngest detective
+Jenny is 9 years old. She is the youngest detective in North America. 
+Jenny is a 3rd grader student, so when a new mission comes up, 
+she gets a code to decipher in a form of a sticker (with numbers) in her math notebook 
+and a comment (a sentence) in her writing notebook. All she needs to do is to figure out one word, 
+from there she already knows what to do. And here comes your role 
+- you can help Jenny find out what the word is!
+
+In order to find out what the word is, you should use the sticker (array of 3 numbers)
+to retrive 3 letters from the comment (string) that create the word.
+
+Each of the numbers in the array refers to the position of a letter in the string, in increasing order.
+Spaces are not places, you need the actual letters. No spaces.
+The returned word should be all lowercase letters.
+if you can't find one of the letters using the index numbers, return "No mission today".
+Jenny would be very sad, but that's life... :(
+Example: input: [5, 0, 3], "I Love You" output: "ivy" (0 = "i", 3 = "v", 5 = "y")
+
+*/
+function missingWord(nums, str) {
+  const letters = str.replace(/\s+/g, "").toLowerCase();
+  const word = nums.sort((a, b) => a - b).map((num) => letters[num]);
+
+  return word.includes(undefined) ? "No mission today" : word.join("");
+}
+console.log(missingWord([0, 3, 5], "I love you")); // "ivy"
+console.log(missingWord([7, 10, 1], "see you later")); // 'ear'
+console.log(missingWord([50, 4, 6], "Hi everybody")); // No mission today
+console.log(missingWord([2, 2, 2], "  aRB")); // "bbb"
