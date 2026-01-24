@@ -1376,7 +1376,29 @@ function missingWord(nums, str) {
 
   return word.includes(undefined) ? "No mission today" : word.join("");
 }
-console.log(missingWord([0, 3, 5], "I love you")); // "ivy"
-console.log(missingWord([7, 10, 1], "see you later")); // 'ear'
-console.log(missingWord([50, 4, 6], "Hi everybody")); // No mission today
-console.log(missingWord([2, 2, 2], "  aRB")); // "bbb"
+// console.log(missingWord([0, 3, 5], "I love you")); // "ivy"
+// console.log(missingWord([7, 10, 1], "see you later")); // 'ear'
+// console.log(missingWord([50, 4, 6], "Hi everybody")); // No mission today
+// console.log(missingWord([2, 2, 2], "  aRB")); // "bbb"
+
+/* (48) Flatten
+Write a function that flattens an Array of Array objects into a flat Array. 
+Your function must only do one level of flattening.
+
+flatten([1,2,3])  ==> [1,2,3]
+flatten([[1,2,3],["a","b","c"],[1,2,3]])  ==> [1,2,3,"a","b","c",1,2,3]
+flatten([[[1,2,3]]])  ==> [[1,2,3]]
+
+*/
+function flatten(array) {
+  return array.flat();
+}
+console.log(flatten([1, 2, 3])); // [1,2,3]
+console.log(
+  flatten([
+    [1, 2, 3],
+    ["a", "b", "c"],
+    [1, 2, 3],
+  ]),
+); // [1,2,3,"a","b","c",1,2,3]
+console.log(flatten([[[1, 2, 3]]])); // [[1,2,3]]
