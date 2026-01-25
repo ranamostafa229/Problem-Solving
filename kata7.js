@@ -1563,7 +1563,20 @@ function alphabetWar(fight) {
       ? "Right side wins!"
       : "Let's fight again!";
 }
-console.log(alphabetWar("z")); // => Right side wins!
-console.log(alphabetWar("zdqmwpbs")); // => Let's fight again!
-console.log(alphabetWar("zzzzs")); // => Right side wins!
-console.log(alphabetWar("wwwwwwz")); // => Left side wins!
+// console.log(alphabetWar("z")); // => Right side wins!
+// console.log(alphabetWar("zdqmwpbs")); // => Let's fight again!
+// console.log(alphabetWar("zzzzs")); // => Right side wins!
+// console.log(alphabetWar("wwwwwwz")); // => Left side wins!
+
+/* (54) The reject() function
+Implement a function which filters out array values which satisfy the given predicate.
+
+reject([1, 2, 3, 4, 5, 6], (n) => n % 2 === 0)  =>  [1, 3, 5]
+
+*/
+function reject(array, predicate) {
+  return array.filter((x) => !predicate(x));
+}
+console.log(reject(["a", "b", 3, "d"], (x) => typeof x === "string")); // [3]
+console.log(reject([1, 2, 3, 4, 5, 6], (n) => n % 2 === 0)); // [1, 3, 5]
+console.log(reject(["a", "b", 3, "d"], (x) => typeof x === "number")); // ['a', 'b', 'd']
