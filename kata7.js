@@ -1729,7 +1729,42 @@ function likeOrDislike(buttons) {
     "Nothing",
   );
 }
-console.log(likeOrDislike(["Dislike"])); // Dislike
-console.log(likeOrDislike(["Like", "Like"])); // Nothing
-console.log(likeOrDislike(["Dislike", "Like"])); // Like
-console.log(likeOrDislike(["Like", "Dislike", "Dislike"])); // Nothing
+// console.log(likeOrDislike(["Dislike"])); // Dislike
+// console.log(likeOrDislike(["Like", "Like"])); // Nothing
+// console.log(likeOrDislike(["Dislike", "Like"])); // Like
+// console.log(likeOrDislike(["Like", "Dislike", "Dislike"])); // Nothing
+
+/* (59) Last
+Find the last element of the given argument(s). If a single argument is passed and is a list/array 
+or a string, return its last element. It is guaranteed that there will be at least one argument 
+and that single-argument arrays/lists/strings will not be empty.
+
+Examples
+last(5)               ==> 5
+last([1, 2, 3, 4])    ==>  4
+last("xyz")           ==> "z"
+last(1, 2, 3, 4)      ==>  4
+last([1, 2], [3, 4])  ==>  [3, 4]
+last([[1, 2], [3, 4]])  ==>  [3, 4]
+
+*/
+function last(...args) {
+  console.log("arg", args, args[0]);
+  if (args.length === 1) {
+    const x = args[0];
+    return typeof x === "string"
+      ? x.slice(-1)
+      : Array.isArray(x)
+        ? x[x.length - 1]
+        : x;
+  }
+  return args[args.length - 1];
+}
+console.log(last(5)); // 5
+console.log(last("123")); // "3"
+console.log(last([1, 2, 3])); // 3
+console.log(last([1, 2, 3, [4, 5]])); // [4, 5]
+
+console.log(last(1, 2, 3, 4)); // 4
+console.log(last("a", "b", "c")); // "c"
+console.log(last([1], [2], [3])); // [3]
