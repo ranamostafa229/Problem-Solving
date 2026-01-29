@@ -1902,9 +1902,9 @@ However, the arrays can have varying lengths, not just limited to 4.
 const binaryArrayToNumber = (arr) => {
   return parseInt(+arr.join(""), 2);
 };
-console.log(binaryArrayToNumber([0, 0, 0, 1])); // 1
-console.log(binaryArrayToNumber([0, 0, 1, 0])); // 2
-console.log(binaryArrayToNumber([1, 1, 1, 1])); // 15
+// console.log(binaryArrayToNumber([0, 0, 0, 1])); // 1
+// console.log(binaryArrayToNumber([0, 0, 1, 0])); // 2
+// console.log(binaryArrayToNumber([1, 1, 1, 1])); // 15
 
 /* (65) Greet Me
 Write a method that takes one argument as name and then greets that name, 
@@ -1919,10 +1919,10 @@ Example:
 const greet = function (name) {
   return `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
 };
-console.log(greet("riley")); // "Hello Riley!"
-console.log(greet("JACK")); // "Hello Jack!"
+// console.log(greet("riley")); // "Hello Riley!"
+// console.log(greet("JACK")); // "Hello Jack!"
 
-/*
+/* (66) Odder Than the Rest
 Create a method that takes an array/list as an input, and outputs the index at which the sole 
 odd number is located.
 
@@ -1937,3 +1937,9 @@ oddOne([4,-8,98,-12,-7,90,100]) // => 4
 oddOne([2,4,6,8]) // => -1
 
 */
+function oddOne(arr) {
+  return arr.findIndex((num) => num % 2 !== 0);
+}
+console.log(oddOne([2, 4, 6, 7, 10])); //3
+console.log(oddOne([2, 16, 98, 10, 13, 78])); //4
+console.log(oddOne([2, 4, 6, 8])); //-1
