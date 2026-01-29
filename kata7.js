@@ -1879,4 +1879,61 @@ function modifyMultiply(str, loc, num) {
   // [OR]
   // return Array(num).fill(str.split(" ")[loc]).join("-");
 }
-console.log(modifyMultiply("This is a string", 3, 5)); // "string-string-string-string-string"
+// console.log(modifyMultiply("This is a string", 3, 5)); // "string-string-string-string-string"
+
+/* (64) Ones and Zeros
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+Examples:
+
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11
+However, the arrays can have varying lengths, not just limited to 4.
+
+*/
+const binaryArrayToNumber = (arr) => {
+  return parseInt(+arr.join(""), 2);
+};
+console.log(binaryArrayToNumber([0, 0, 0, 1])); // 1
+console.log(binaryArrayToNumber([0, 0, 1, 0])); // 2
+console.log(binaryArrayToNumber([1, 1, 1, 1])); // 15
+
+/* (65) Greet Me
+Write a method that takes one argument as name and then greets that name, 
+capitalized and ends with an exclamation point.
+
+Example:
+
+"riley" --> "Hello Riley!"
+"JACK"  --> "Hello Jack!"
+
+*/
+const greet = function (name) {
+  return `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+};
+console.log(greet("riley")); // "Hello Riley!"
+console.log(greet("JACK")); // "Hello Jack!"
+
+/*
+Create a method that takes an array/list as an input, and outputs the index at which the sole 
+odd number is located.
+
+This method should work with arrays with negative numbers. If there are no odd numbers in the array,
+then the method should output -1.
+
+Examples:
+
+oddOne([2,4,6,7,10]) // => 3
+oddOne([2,16,98,10,13,78]) // => 4
+oddOne([4,-8,98,-12,-7,90,100]) // => 4
+oddOne([2,4,6,8]) // => -1
+
+*/
