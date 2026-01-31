@@ -2066,8 +2066,29 @@ function id(c_str) {
         ? "camel"
         : "none";
 }
-console.log(id("hello-world")); // "kebab"
-console.log(id("hello_to_the_world")); // "snake"
-console.log(id("helloToTheWorld")); // "camel"
-console.log(id("hello-World")); //none
-console.log(id("hello-to-the-world")); //kebab
+// console.log(id("hello-world")); // "kebab"
+// console.log(id("hello_to_the_world")); // "snake"
+// console.log(id("helloToTheWorld")); // "camel"
+// console.log(id("hello-World")); //none
+// console.log(id("hello-to-the-world")); //kebab
+
+/* (71) Sum of two lowest positive integers
+Create a function that returns the sum of the two lowest positive numbers given an array
+of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+[10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+*/
+function sumTwoSmallestNumbers(numbers) {
+  return numbers
+    .sort((a, b) => a - b)
+    .slice(0, 2)
+    .reduce((acc, cur) => acc + cur, 0);
+  // [OR]
+  // const [a, b] = numbers.sort((a, b) => a - b);
+  // return a + b;
+}
+console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77])); // 7
+console.log(sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453])); // 3453455
