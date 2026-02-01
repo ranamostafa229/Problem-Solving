@@ -2120,8 +2120,27 @@ function explode(x) {
         ? newArr(x[1])
         : "Void!";
 }
-console.log(explode([9, 3])); // [[9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3]]
-console.log(explode(["a", 3])); // [['a', 3], ['a', 3] ['a', 3]]
-console.log(explode([6, "c"])); // [[6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c']]
-console.log(explode(["a", "b"])); // 'Void!'
-console.log(explode(["a", 0])); // []
+// console.log(explode([9, 3])); // [[9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3]]
+// console.log(explode(["a", 3])); // [['a', 3], ['a', 3] ['a', 3]]
+// console.log(explode([6, "c"])); // [[6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c']]
+// console.log(explode(["a", "b"])); // 'Void!'
+// console.log(explode(["a", 0])); // []
+
+/* (73) Find the capitals
+Write a function that takes a single non-empty string of only lowercase and uppercase ascii letters
+(word) as its argument, and returns an ordered list containing the indices of all capital (uppercase)
+letters in the string.
+
+Example (Input --> Output)
+"CodEWaRs" --> [0,3,4,6]
+*/
+var capitals = function (word) {
+  return [...word]
+    .map((c, i) => (c === c.toUpperCase() ? i : -1))
+    .filter((i) => i !== -1);
+};
+
+console.log(capitals("CodEWaRs")); // [0,3,4,6]
+console.log(capitals("aAbB")); // [1,3]
+console.log(capitals("AAA")); // [0,1,2]
+console.log(capitals("")); // []
