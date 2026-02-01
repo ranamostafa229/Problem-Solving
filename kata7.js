@@ -2090,5 +2090,38 @@ function sumTwoSmallestNumbers(numbers) {
   // const [a, b] = numbers.sort((a, b) => a - b);
   // return a + b;
 }
-console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77])); // 7
-console.log(sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453])); // 3453455
+// console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77])); // 7
+// console.log(sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453])); // 3453455
+
+/* (72) Array Array Array
+You are given an initial 2-value array (x). You will use this to calculate a score.
+
+If both values in (x) are numbers, the score is the sum of the two. If only one is a number,
+the score is that number. If neither is a number, return 'Void!'.
+
+Once you have your score, you must return an array of arrays. Each sub array will be the same as (x)
+and the number of sub arrays should be equal to the score.
+
+For example:
+
+if (x) == ['a', 3]  you should return [['a', 3], ['a', 3], ['a', 3]].
+
+
+*/
+function explode(x) {
+  const newArr = (s) => new Array(s).fill(x);
+  const type = (e) => typeof e === "number";
+
+  return type(x[0]) && type(x[1])
+    ? newArr(x[0] + x[1])
+    : type(x[0])
+      ? newArr(x[0])
+      : type(x[1])
+        ? newArr(x[1])
+        : "Void!";
+}
+console.log(explode([9, 3])); // [[9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3], [9, 3]]
+console.log(explode(["a", 3])); // [['a', 3], ['a', 3] ['a', 3]]
+console.log(explode([6, "c"])); // [[6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c'], [6, 'c']]
+console.log(explode(["a", "b"])); // 'Void!'
+console.log(explode(["a", 0])); // []
