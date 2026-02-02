@@ -2140,7 +2140,43 @@ var capitals = function (word) {
     .filter((i) => i !== -1);
 };
 
-console.log(capitals("CodEWaRs")); // [0,3,4,6]
-console.log(capitals("aAbB")); // [1,3]
-console.log(capitals("AAA")); // [0,1,2]
-console.log(capitals("")); // []
+// console.log(capitals("CodEWaRs")); // [0,3,4,6]
+// console.log(capitals("aAbB")); // [1,3]
+// console.log(capitals("AAA")); // [0,1,2]
+// console.log(capitals("")); // []
+
+/* (74) Friday the 13th Part 1
+It's Friday the 13th, and Jason is ready for his first killing spree!
+
+Create a function, killcount, that accepts two arguments: an array of array pairs
+(the conselor's name and intelligence - ["Chad", 2]) and an integer representing Jason's intellegence.
+
+Ruby, Python, Crystal:
+
+counselors = [["Chad", 2], ["Tommy", 9]]
+jason = 7
+JavaScript:
+
+let counselors = [["Chad", 2], ["Tommy", 9]];
+let jason = 7;
+PHP:
+
+$counselors = [["Chad", 2], ["Tommy", 9]];
+$jason = 7;
+Your function must return an array of the names of all the counselors who can be outsmarted
+and killed by Jason.
+
+Happy Friday the 13th!
+
+*/
+function killcount(counselors, jason) {
+  // return [counselors.find((counselor, i) => jason > counselor[i])[0]] || [];
+  return counselors
+    .filter((counselor) => jason > counselor[1])
+    .map((counselor) => counselor[0]);
+}
+let counselors = [
+  ["Mike", 7],
+  ["Alysa", 3],
+];
+console.log(killcount(counselors, 7)); // ['Alysa']
