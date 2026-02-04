@@ -2243,5 +2243,24 @@ function maxProduct(a) {
   a.splice(maxIndex, 1); // delete max from array
   return max * Math.max(...a);
 }
-console.log(maxProduct([56, 335, 195, 443, 6, 494, 252])); // 218842
-console.log(maxProduct([2, 1, 5, 0, 4, 3])); // 20
+// console.log(maxProduct([56, 335, 195, 443, 6, 494, 252])); // 218842
+// console.log(maxProduct([2, 1, 5, 0, 4, 3])); // 20
+
+/* (77) Filter unused digits
+Given a varying number of integer arguments, return the digits that are not present in any of them.
+
+Example:
+
+[12, 34, 56, 78]  =>  "09"
+[2015, 8, 26]     =>  "3479"
+Note: the digits in the resulting string should be sorted.
+
+*/
+function unusedDigits(...digits) {
+  return "0123456789"
+    .split("")
+    .filter((digit) => !digits.join("").includes(digit))
+    .join("");
+}
+console.log(unusedDigits(12, 34, 56, 78)); // "09"
+console.log(unusedDigits(2015, 8, 26)); // "3479"
