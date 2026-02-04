@@ -2262,5 +2262,35 @@ function unusedDigits(...digits) {
     .filter((digit) => !digits.join("").includes(digit))
     .join("");
 }
-console.log(unusedDigits(12, 34, 56, 78)); // "09"
-console.log(unusedDigits(2015, 8, 26)); // "3479"
+// console.log(unusedDigits(12, 34, 56, 78)); // "09"
+// console.log(unusedDigits(2015, 8, 26)); // "3479"
+
+/* (78) SillyCASE
+Create a function that takes a string and returns that string with the first half lowercased
+and the last half uppercased.
+
+eg: foobar == fooBAR
+
+If it is an odd number then 'round' it up to find which letters to uppercase. See example below.
+
+sillycase("brian")  
+//         --^-- midpoint  
+//         bri    first half (lower-cased)  
+//            AN second half (upper-cased)  
+
+*/
+function sillycase(silly) {
+  const length = Math.ceil(silly.length / 2);
+  return (
+    silly.slice(0, length).toLowerCase() + silly.slice(length).toUpperCase()
+  );
+  // [OR]
+  // const length = silly.length;
+  // return length % 2 === 0
+  //   ? silly.slice(0, length / 2).toLowerCase() +
+  //       silly.slice(length / 2).toUpperCase()
+  //   : silly.slice(0, length / 2 + 1).toLowerCase() +
+  //       silly.slice(length / 2 + 1).toUpperCase();
+}
+console.log(sillycase("foobar")); // "fooBAR"
+console.log(sillycase("brian")); // "briAN"
