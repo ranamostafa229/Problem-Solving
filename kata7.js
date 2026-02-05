@@ -2292,5 +2292,34 @@ function sillycase(silly) {
   //   : silly.slice(0, length / 2 + 1).toLowerCase() +
   //       silly.slice(length / 2 + 1).toUpperCase();
 }
-console.log(sillycase("foobar")); // "fooBAR"
-console.log(sillycase("brian")); // "briAN"
+// console.log(sillycase("foobar")); // "fooBAR"
+// console.log(sillycase("brian")); // "briAN"
+
+/* (79) Remove consecutive duplicate words
+Your task is to remove all consecutive duplicate words from a string, 
+leaving only first words entries. For example:
+
+"alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+
+--> "alpha beta gamma delta alpha beta gamma delta"
+Words will be separated by a single space. There will be no leading 
+or trailing spaces in the string. An empty string (0 words) is a valid input.
+
+*/
+function removeConsecutiveDuplicates(string) {
+  return string !== ""
+    ? string
+        .split(" ")
+        .filter((word, index, arr) => word !== arr[index - 1])
+        .join(" ")
+    : "";
+}
+console.log(removeConsecutiveDuplicates("alpha alphaalpha alphaalphaalpha")); // "alpha alphaalpha alphaalphaalpha"
+console.log(
+  removeConsecutiveDuplicates(
+    "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta",
+  ),
+); // "alpha beta gamma delta alpha beta gamma delta"
+console.log(removeConsecutiveDuplicates(""));
+("");
+console.log(removeConsecutiveDuplicates("alpha")); // "alpha"
