@@ -2307,13 +2307,12 @@ or trailing spaces in the string. An empty string (0 words) is a valid input.
 
 */
 function removeConsecutiveDuplicates(string) {
-  return string !== ""
-    ? string
-        .split(" ")
-        .filter((word, index, arr) => word !== arr[index - 1])
-        .join(" ")
-    : "";
+  return string
+    .split(" ")
+    .filter((word, index, arr) => word !== arr[index - 1])
+    .join(" ");
 }
+
 console.log(removeConsecutiveDuplicates("alpha alphaalpha alphaalphaalpha")); // "alpha alphaalpha alphaalphaalpha"
 console.log(
   removeConsecutiveDuplicates(
