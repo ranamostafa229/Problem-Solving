@@ -2313,12 +2313,39 @@ function removeConsecutiveDuplicates(string) {
     .join(" ");
 }
 
-console.log(removeConsecutiveDuplicates("alpha alphaalpha alphaalphaalpha")); // "alpha alphaalpha alphaalphaalpha"
-console.log(
-  removeConsecutiveDuplicates(
-    "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta",
-  ),
-); // "alpha beta gamma delta alpha beta gamma delta"
-console.log(removeConsecutiveDuplicates(""));
-("");
-console.log(removeConsecutiveDuplicates("alpha")); // "alpha"
+// console.log(removeConsecutiveDuplicates("alpha alphaalpha alphaalphaalpha")); // "alpha alphaalpha alphaalphaalpha"
+// console.log(
+//   removeConsecutiveDuplicates(
+//     "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta",
+//   ),
+// ); // "alpha beta gamma delta alpha beta gamma delta"
+// console.log(removeConsecutiveDuplicates(""));
+// ("");
+// console.log(removeConsecutiveDuplicates("alpha")); // "alpha"
+
+/* (80) Unique Sum
+Given a list of integers values, your job is to return the sum of the values; however, 
+if the same integer value appears multiple times in the list, you can only count it once in your sum.
+
+For example:
+
+[ 1, 2, 3] ==> 6
+
+[ 1, 3, 8, 1, 8] ==> 12
+
+[ -1, -1, 5, 2, -7] ==> -1
+
+[] ==> null
+
+*/
+function uniqueSum(lst) {
+  let sum = 0;
+  new Set(lst).forEach((value) => (sum += value));
+  return lst.length === 0 ? null : sum;
+  // [OR]
+  // return [...new Set(lst)].reduce((acc, curr) => acc + curr, null);
+}
+console.log(uniqueSum([1, 2, 3])); //6
+console.log(uniqueSum([1, 3, 8, 1, 8])); //12
+console.log(uniqueSum([])); // null
+console.log(uniqueSum([-1, -1, 5, 2, -7])); //-1
