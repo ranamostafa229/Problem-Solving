@@ -2383,4 +2383,29 @@ Examples
 function sumEvenNumbers(input) {
   return input.filter((n) => n % 2 === 0).reduce((acc, cur) => acc + cur, 0);
 }
-console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); //30
+// console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); //30
+
+/* (83) Sum of odd numbers
+Given the triangle of consecutive odd numbers:
+
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+...
+Calculate the sum of the numbers in the nth row of this triangle (starting at index 1)
+e.g.: (Input --> Output)
+
+1 -->  1
+2 --> 3 + 5 = 8
+
+
+*/
+function rowSumOddNumbers(n) {
+  return n ** 3;
+  // [OR]
+  // return Math.pow(n, 3);
+}
+console.log(rowSumOddNumbers(42)); // 74088
+console.log(rowSumOddNumbers(1)); // 1
