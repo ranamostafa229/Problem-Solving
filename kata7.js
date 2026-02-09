@@ -2427,4 +2427,26 @@ function last(x) {
   // return x.split(" ").sort((a, b) => a.slice(-1).localeCompare(b.slice(-1)));
 }
 
-console.log(last("man i need a taxi up to ubud")); // ['a', 'need', 'ubud', 'i', 'taxi', 'man', 'to', 'up']
+// console.log(last("man i need a taxi up to ubud")); // ['a', 'need', 'ubud', 'i', 'taxi', 'man', 'to', 'up']
+
+/* (85) Return the first M multiples of N
+Implement a function that takes two numbers m and n and returns an array of the first m multiples
+of the real number n. Assume that m is a positive integer.
+
+Ex.
+
+(3, 5.0) --> [5.0, 10.0, 15.0]
+
+*/
+function multiples(m, n) {
+  return Array(m)
+    .fill(0)
+    .map((_, i) => (i + 1) * n);
+  // [OR]
+  // let result = [];
+  // for (let i = 1; i <= m; i++) {
+  //   result.push(i * n);
+  // }
+  // return result;
+}
+console.log(multiples(3, 5)); // [5, 10, 15]
