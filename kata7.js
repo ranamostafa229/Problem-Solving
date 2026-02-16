@@ -2744,4 +2744,34 @@ function symDiff(s1, s2) {
   // [OR]
   // return new Set([...s1, ...s2].filter((e) => !s1.has(e) || !s2.has(e)));
 }
-console.log(symDiff(new Set([1, 2, 3]), new Set([2, 3, 4]))); // {1, 4}
+// console.log(symDiff(new Set([1, 2, 3]), new Set([2, 3, 4]))); // {1, 4}
+
+/* (94) Valid Parentheses
+Write a function that takes a string of parentheses, and determines if the order of the parentheses
+is valid. The function should return true if the string is valid, and false if it's invalid.
+
+Examples
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+Constraints
+0 <= length of input <= 100
+
+All inputs will be strings, consisting only of characters ( and ).
+Empty strings are considered balanced (and therefore valid), and will be tested.
+For languages with mutable strings, the inputs should not be mutated.
+
+*/
+function validParentheses(parenStr) {
+  return (
+    [...parenStr].reduce((acc, cur) => {
+      if (acc < 0) return acc; // if at any point we have more closing parentheses than opening ones, it's invalid
+      return cur === "(" ? acc + 1 : acc - 1; // increment for opening, decrement for closing
+    }, 0) === 0
+  ); // at the end, we should have an equal number of opening and closing parentheses
+}
+console.log(validParentheses("()")); // true
+console.log(validParentheses(")(()))")); // false
+console.log(validParentheses("(")); // false
+console.log(validParentheses("(())((()())())")); // true
