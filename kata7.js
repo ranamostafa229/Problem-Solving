@@ -2806,9 +2806,10 @@ function howMuchCoffee(events) {
   );
   return count > 3 ? "You need extra sleep" : count;
 }
-console.log(howMuchCoffee([])); // 0
-console.log(howMuchCoffee(["cw"])); // 1
-console.log(howMuchCoffee(["CW"])); // 2
-console.log(howMuchCoffee(["cw", "CAT"])); // 3
-console.log(howMuchCoffee(["cw", "CAT", "DOG"])); // 'You need extra sleep')
-console.log(howMuchCoffee(["cw", "CAT", "cw=others"])); // 3
+// console.log(howMuchCoffee([])); // 0
+// console.log(howMuchCoffee(["cw"])); // 1
+// console.log(howMuchCoffee(["CW"])); // 2
+// console.log(howMuchCoffee(["cw", "CAT"])); // 3
+// console.log(howMuchCoffee(["cw", "CAT", "DOG"])); // 'You need extra sleep')
+// console.log(howMuchCoffee(["cw", "CAT", "cw=others"])); // 3
+
