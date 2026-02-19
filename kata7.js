@@ -2865,6 +2865,31 @@ function alternateSqSum(arr) {
   // [or]
   return arr.reduce((acc, cur, i) => acc + (i % 2 !== 0 ? cur ** 2 : cur), 0);
 }
-console.log(alternateSqSum([])); // 0
-console.log(alternateSqSum([1, 2, 3, 4, 5])); // 29
-console.log(alternateSqSum([-1, 0, -3, 0, -5, 3])); // 0
+// console.log(alternateSqSum([])); // 0
+// console.log(alternateSqSum([1, 2, 3, 4, 5])); // 29
+// console.log(alternateSqSum([-1, 0, -3, 0, -5, 3])); // 0
+
+/* (98) Replace all items
+Write function replaceAll (Python: replace_all) that will replace all occurrences of
+an item with another.
+
+Python / JavaScript: The function has to work for strings and lists.
+
+Example: replaceAll [1,2,2] 1 2 -> in list [1,2,2] we replace 1 with 2 to get new list [2,2,2]
+
+replaceAll(replaceAll(array: [1,2,2], old: 1, new: 2) // [2,2,2]
+
+*/
+function replaceAll(seq, find, replace) {
+  return typeof seq === "string"
+    ? seq.replaceAll(find, replace)
+    : seq.map((item) => (item === find ? replace : item));
+
+  // [OR]
+  // return typeof seq === "string"
+  //   ? seq.split(find).join(replace)
+  //   : seq.map((item) => (item === find ? replace : item));
+}
+console.log(replaceAll([], 1, 2)); //[]
+console.log(replaceAll([1, 2, 2], 1, 2)); //[2,2,2]
+console.log(replaceAll("string", "s", "2")); //[2,2,2]
