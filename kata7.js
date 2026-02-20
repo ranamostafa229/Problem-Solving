@@ -2890,6 +2890,28 @@ function replaceAll(seq, find, replace) {
   //   ? seq.split(find).join(replace)
   //   : seq.map((item) => (item === find ? replace : item));
 }
-console.log(replaceAll([], 1, 2)); //[]
-console.log(replaceAll([1, 2, 2], 1, 2)); //[2,2,2]
-console.log(replaceAll("string", "s", "2")); //[2,2,2]
+// console.log(replaceAll([], 1, 2)); //[]
+// console.log(replaceAll([1, 2, 2], 1, 2)); //[2,2,2]
+// console.log(replaceAll("string", "s", "2")); //[2,2,2]
+
+/* (99) Reverse and Invert
+Reverse and invert all integer values in a given list.
+
+[1,12,'a',3.4,87,99.9,-42,50,5.6] --> [-1,-21,-78,24,-5]
+Remove all types other than integer.
+*/
+
+function reverseInvert(array) {
+  return array
+    .filter((item) => Number.isInteger(item))
+    .map((num) => {
+      const revertedNum = Number(
+        [...Math.abs(num).toString()].reverse().join(""),
+      );
+      return num < 0 ? revertedNum : -revertedNum;
+    });
+}
+console.log(reverseInvert([1, 2, 3, 4, 5])); // [-1,-2,-3,-4,-5]
+console.log(reverseInvert([-10])); // [1]
+console.log(reverseInvert([-9, -18, 99])); // [9,81,-99]
+console.log(reverseInvert([1, 12, "a", 3.4, 87, 99.9, -42, 50, 5.6])); //[-1,-21,-78,24,-5]
