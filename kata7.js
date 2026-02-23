@@ -3001,7 +3001,39 @@ function arrayInfo(arr) {
     [arr.filter((x) => x === " ").length || null],
   ];
 }
-console.log(arrayInfo([1, 2, 3.33, 4, 5.01, "bass", "kick", " "])); // [[8],[3],[2],[2],[1]]
-console.log(arrayInfo([0.001, 2, " "])); // [[3],[1],[1],[null],[1]]
-console.log(arrayInfo([])); // 'Nothing in the array!'
-console.log(arrayInfo([" "])); // [[1],[null],[null],[null],[1]]
+// console.log(arrayInfo([1, 2, 3.33, 4, 5.01, "bass", "kick", " "])); // [[8],[3],[2],[2],[1]]
+// console.log(arrayInfo([0.001, 2, " "])); // [[3],[1],[1],[null],[1]]
+// console.log(arrayInfo([])); // 'Nothing in the array!'
+// console.log(arrayInfo([" "])); // [[1],[null],[null],[null],[1]]
+
+/* (102) esrever esreveR!
+In this kata you must take an input string, reverse the order of the words, and reverse the order of 
+the letters within the words.
+
+But, as a bonus, every test input will end with a punctuation mark (! ? .) and the output should 
+be returned with the mark at the end.
+
+A few examples should help clarify:
+
+esrever("hello world.") == "dlrow olleh."
+
+esrever("Much l33t?") == "t33l hcuM?"
+
+esrever("tacocat!") == "tacocat!"
+Quick Note: A string will always be passed in (though it may be empty) so no need for error-checking
+other types.
+
+*/
+function esrever(str) {
+  return (
+    str
+      .slice(0, -1)
+      .split(" ")
+      .reverse()
+      .map((word) => [...word].reverse().join(""))
+      .join(" ") + str.slice(-1)
+  );
+}
+console.log(esrever("an Easy one?")); // 'eno ysaE na?'
+console.log(esrever('<?> &!.".')); // '".!& >?<.'
+console.log(esrever("")); // 'empty string'
