@@ -3034,6 +3034,40 @@ function esrever(str) {
       .join(" ") + str.slice(-1)
   );
 }
-console.log(esrever("an Easy one?")); // 'eno ysaE na?'
-console.log(esrever('<?> &!.".')); // '".!& >?<.'
-console.log(esrever("")); // 'empty string'
+// console.log(esrever("an Easy one?")); // 'eno ysaE na?'
+// console.log(esrever('<?> &!.".')); // '".!& >?<.'
+// console.log(esrever("")); // 'empty string'
+
+/* (103) Not all but sometimes all
+
+Write
+function remove(str, what)
+that takes in a string str(text in Python) and an object/hash/dict/Dictionary what and returns
+a string with the chars removed in what. For example:
+
+remove('this is a string',{'t':1, 'i':2}) === 'hs s a string'
+// remove from 'this is a string' the first 1 't' and the first 2 i's.
+remove('hello world',{'x':5, 'i':2}) === 'hello world'
+// there are no x's or i's, so nothing gets removed
+remove('apples and bananas',{'a':50, 'n':1}) === 'pples d bnns'
+// we don't have 50 a's, so just remove it till we hit end of string.
+
+
+*/
+function remove(str, what) {
+  let output = "";
+  for (let i = 0; i < str.length; i++) {
+    if (what[str[i]] > 0) {
+      what[str[i]]--; // if the character is in the 'what' object and we still have some occurrences to remove,
+      //  decrement the count and skip adding it to the output
+    } else {
+      output += str[i];
+    }
+  }
+  return output;
+  //  [OR]
+  // return str.replace(/[a-z]/g, (char) => (what[char]-- > 0 ? "" : char));
+}
+console.log(remove("this is a string", { t: 1, i: 2 })); // 'hs s a string'
+console.log(remove("hello world", { x: 5, i: 2 })); // 'hello world'
+console.log(remove("apples and bananas", { a: 50, n: 1 })); // 'pples d bnns'
