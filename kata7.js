@@ -3091,6 +3091,11 @@ function dominator(arr) {
     if (value > half) return parseInt(key);
   }
   return -1; // if no dominator is found
+  // [OR]
+  // let Counts = {};
+  // return (
+  //   arr.find((x) => (Counts[x] = (Counts[x] || 0) + 1) > arr.length / 2) || -1
+  // );
 }
 console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3])); // 3
 console.log(dominator([1, 2, 3, 4])); // -1
