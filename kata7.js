@@ -3115,10 +3115,13 @@ Examples:
 
 */
 function getMiddle(s) {
-  const strLength = s.length;
-  return strLength % 2 === 0 || strLength === 1
-    ? s.slice(strLength / 2 - 1, strLength / 2 + 1)
-    : s.slice(Math.ceil(strLength / 2) - 1, Math.ceil(strLength / 2));
+  return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1); // substr(start, length)
+  // [OR] return s.slice((s.length - 1) / 2, s.length / 2 + 1);
+  // [OR]
+  // const strLength = s.length;
+  // return strLength % 2 === 0 || strLength === 1
+  //   ? s.slice(strLength / 2 - 1, strLength / 2 + 1)
+  //   : s.slice(Math.ceil(strLength / 2) - 1, Math.ceil(strLength / 2));
 }
 console.log(getMiddle("test")); // 'es'
 console.log(getMiddle("testing")); // 't'
