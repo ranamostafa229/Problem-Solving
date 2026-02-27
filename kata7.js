@@ -3097,6 +3097,30 @@ function dominator(arr) {
   //   arr.find((x) => (Counts[x] = (Counts[x] || 0) + 1) > arr.length / 2) || -1
   // );
 }
-console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3])); // 3
-console.log(dominator([1, 2, 3, 4])); // -1
-console.log(dominator([1, 1, 1, 2, 2, 2, 2])); // 2
+// console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3])); // 3
+// console.log(dominator([1, 2, 3, 4])); // -1
+// console.log(dominator([1, 1, 1, 2, 2, 2, 2])); // 2
+
+/* (105) Get the Middle Character
+You are going to be given a non-empty string. Your job is to return the middle character(s) of
+the string.
+
+If the string's length is odd, return the middle character.
+If the string's length is even, return the middle 2 characters.
+Examples:
+"test" --> "es"
+"testing" --> "t"
+"middle" --> "dd"
+"A" --> "A"
+
+*/
+function getMiddle(s) {
+  const strLength = s.length;
+  return strLength % 2 === 0 || strLength === 1
+    ? s.slice(strLength / 2 - 1, strLength / 2 + 1)
+    : s.slice(Math.ceil(strLength / 2) - 1, Math.ceil(strLength / 2));
+}
+console.log(getMiddle("test")); // 'es'
+console.log(getMiddle("testing")); // 't'
+console.log(getMiddle("middle")); // 'dd'
+console.log(getMiddle("A")); // 'A'
