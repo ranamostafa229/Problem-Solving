@@ -3208,11 +3208,13 @@ not [4, 2])
 // return an array of numbers (that are a power of 2)
 // for which the input "n" is the sum
 const powers = (n) => {
-  return Array(Math.floor(Math.log2(n)) + 1)
-    .fill(1)
-    .map((_, i) => 2 ** i)
-    .filter((num) => n & num)
-    .sort((a, b) => a - b);
+  // Every number is already stored inside the computer as a sum of powers of 2.
+  return n
+    .toString(2) // convert to binary representation of n
+    .split("")
+    .reverse() // to start from the least significant bit
+    .map((str, idx) => (+str ? 2 ** idx : 0)) // if the bit is 1, return the corresponding power of 2, otherwise return 0
+    .filter(Boolean); // remove all falsy values => 0
 };
 console.log(powers(6)); // [2, 4]
 console.log(powers(8)); // [8]
