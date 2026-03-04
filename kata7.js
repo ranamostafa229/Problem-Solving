@@ -3244,6 +3244,10 @@ function change(string) {
   return [..."abcdefghijklmnopqrstuvwxyz"].reduce((acc, char) => {
     return acc + (string.toLowerCase().includes(char) ? "1" : "0");
   }, "");
+  // [OR]
+  // return [..."abcdefghijklmnopqrstuvwxyz"]
+  //   .map((char) => (string.toLowerCase().includes(char) ? "1" : "0"))
+  //   .join("");
 }
 console.log(change("a **&  bZ")); // "11000000000000000000000001"
 console.log(change("aaaaaaa79345675")); //  "10000000000000000000000000"
