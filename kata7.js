@@ -3248,6 +3248,11 @@ function change(string) {
   // return [..."abcdefghijklmnopqrstuvwxyz"]
   //   .map((char) => (string.toLowerCase().includes(char) ? "1" : "0"))
   //   .join("");
+  // [OR]
+  // return "abcdefghijklmnopqrstuvwxyz"
+  //   .split("")
+  //   .map((char) => (string.toLowerCase().includes(char) ? "1" : "0"))
+  //   .join("");
 }
 console.log(change("a **&  bZ")); // "11000000000000000000000001"
 console.log(change("aaaaaaa79345675")); //  "10000000000000000000000000"
