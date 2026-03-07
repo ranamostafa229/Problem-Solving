@@ -3254,6 +3254,59 @@ function change(string) {
   //   .map((char) => (string.toLowerCase().includes(char) ? "1" : "0"))
   //   .join("");
 }
-console.log(change("a **&  bZ")); // "11000000000000000000000001"
-console.log(change("aaaaaaa79345675")); //  "10000000000000000000000000"
-console.log(change("&%#*")); // "00000000000000000000000000"
+// console.log(change("a **&  bZ")); // "11000000000000000000000001"
+// console.log(change("aaaaaaa79345675")); //  "10000000000000000000000000"
+// console.log(change("&%#*")); // "00000000000000000000000000"
+
+/* (109) Guess the Word: Count Matching Letters
+Consider a game, wherein the player has to guess a target word. All the player knows is the length of 
+the target word.
+
+To help them in their goal, the game will accept guesses, and return the number of letters that are
+in the correct position.
+
+Write a method that, given the correct word and the player's guess, returns this number.
+
+For example, here's a possible thought process for someone trying to guess the word "dog":
+
+"dog"   # correct word
+"car"   # guess
+# Should return 0 (No letters are in the correct position)
+
+"dog"   # correct word
+"god"   # guess
+# Should return 1 ('o')
+
+"dog"   # correct word
+"cog"   # guess
+# Should return 2 ('o' and 'g')
+
+"dog"   # correct word
+"cod"   # guess
+# Should return 1 ('o')
+
+"dog"   # correct word
+"bog"   # guess
+# Should return 2 ('o' and 'g')
+
+"dog"   # correct word
+"dog"   # guess
+# Should return 3 (Correct!)
+The caller should ensure that the guessed word is always the same length as the correct word, 
+but since it could cause problems if this were not the case, you need to check for this eventuality:
+
+Raise / throw an error (in C#: an InvalidOperationException) if the two parameters are of different lengths.
+You may assume, however, that the two parameters will always be in the same case.
+
+*/
+
+function countCorrectCharacters(correctWord, guess) {
+  if (correctWord.length !== guess.length) {
+    throw new Error("The two parameters must be of the same length.");
+  }
+  return [...correctWord].filter((char, index) => char === guess[index]).length;
+}
+console.log(countCorrectCharacters("dog", "car")); // 0
+console.log(countCorrectCharacters("dog", "god")); // 1
+console.log(countCorrectCharacters("dog", "cog")); // 2
+console.log(countCorrectCharacters("dog", "dog")); // 3
