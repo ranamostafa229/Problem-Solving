@@ -3334,6 +3334,8 @@ function flyBy(lamps, drone) {
       drone[index] === "=" || drone[index] === "T" ? "o" : lamp,
     )
     .join("");
+  // [OR]
+  // return [...lamps].fill("o", 0, drone.length).join("");
 }
 console.log(flyBy("xxxxxx", "====T")); //  'ooooox'
 console.log(flyBy("xxxxxxxxx", "==T")); //  'oooxxxxxx'
