@@ -3396,6 +3396,8 @@ Examples:
 */
 function solve(arr) {
   return arr.find((num) => !arr.includes(-num));
+  // [OR]
+  // return [...new Set(arr)].reduce((acc, cur) => acc + cur);
 }
 console.log(solve([1, -1, 2, -2, 3])); // 3
 console.log(solve([-3, 1, 2, 3, -1, -4, -2])); // -4
