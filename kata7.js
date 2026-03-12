@@ -3432,10 +3432,12 @@ Output 2
 An occurrence of 'and' and/or 'but' only counts when it is at least one space separated. For example 'andd' 
 and 'bbut' do not count as occurrences, whereas 'b but' and 'and d' does count.
 
-
 */
 function apparently(string) {
-  return string.replace(/\b(and|but)\b(?! apparently)/g, "$1 apparently");
+  return string.replace(/\b(and|but)\b(?! apparently\b)/g, "$& apparently");
+  // ?! means => do not match if
+  // $& means => the whole match (either 'and' or 'but')
+  // \b means => word boundary
 }
 console.log(
   apparently(
