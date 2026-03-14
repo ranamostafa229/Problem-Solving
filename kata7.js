@@ -3439,9 +3439,42 @@ function apparently(string) {
   // $& means => the whole match (either 'and' or 'but')
   // \b means => word boundary
 }
-console.log(
-  apparently(
-    "It was great and I have never been on live television before but sometimes I dont watch this.",
-  ),
-); // "It was great and apparently I have never been on live television before but apparently sometimes I dont watch this.",
-console.log(apparently("and")); // and apparently
+// console.log(
+//   apparently(
+//     "It was great and I have never been on live television before but sometimes I dont watch this.",
+//   ),
+// ); // "It was great and apparently I have never been on live television before but apparently sometimes I dont watch this.",
+// console.log(apparently("and")); // and apparently
+
+/* (114) Sequence to 1
+Task
+Given the number n, return the sequence of numbers from n to 1.
+
+Range
+The number n can be negative and also large number:  -9999  <=  n  <=  9999
+
+
+Examples
+n =  5    >>     5, 4, 3, 2, 1
+n = -1    >>    -1, 0, 1
+
+*/
+function seqToOne(n) {
+  let output = [];
+  if (n >= 1) {
+    // Count down to 1
+    for (let i = n; i >= 1; i--) {
+      output.push(i);
+    }
+  } else {
+    // Count up to 1
+    for (let i = n; i <= 1; i++) {
+      output.push(i);
+    }
+  }
+
+  return output;
+}
+console.log(seqToOne(0)); // [0, 1]
+console.log(seqToOne(5)); // [5, 4, 3, 2, 1]
+console.log(seqToOne(-1)); // [-1, 0, 1]
