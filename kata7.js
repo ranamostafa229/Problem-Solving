@@ -3461,6 +3461,7 @@ n = -1    >>    -1, 0, 1
 */
 function seqToOne(n) {
   let output = [];
+
   if (n >= 1) {
     // Count down to 1
     for (let i = n; i >= 1; i--) {
@@ -3474,7 +3475,17 @@ function seqToOne(n) {
   }
 
   return output;
+
+  // [OR]
+
+  // while (n !== 1) {
+  //   if (n >= 1) {
+  //     output.push(n--);
+  //   } else output.push(n++);
+  // }
+  // output.push(1);
+  // return output;
 }
 console.log(seqToOne(0)); // [0, 1]
 console.log(seqToOne(5)); // [5, 4, 3, 2, 1]
-console.log(seqToOne(-1)); // [-1, 0, 1]
+console.log(seqToOne(-1)); // [-1, 0, 1
