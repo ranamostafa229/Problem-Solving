@@ -3486,6 +3486,34 @@ function seqToOne(n) {
   // output.push(1);
   // return output;
 }
-console.log(seqToOne(0)); // [0, 1]
-console.log(seqToOne(5)); // [5, 4, 3, 2, 1]
-console.log(seqToOne(-1)); // [-1, 0, 1
+// console.log(seqToOne(0)); // [0, 1]
+// console.log(seqToOne(5)); // [5, 4, 3, 2, 1]
+// console.log(seqToOne(-1)); // [-1, 0, 1
+
+/* (115) Alphabetical Sequence
+In this kata you will be given a random string of letters and tasked with returning them as a string
+of comma-separated sequences sorted alphabetically, with each sequence starting with an uppercase character
+followed by n-1 lowercase characters, where n is the letter's alphabet position 1-26.
+
+Example
+"ZpglnRxqenU" ->"Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
+
+Technical Details
+The string will include only letters.
+The first letter of each sequence is uppercase followed by n-1 lowercase.
+Each sequence is separated with a comma.
+Return value needs to be a string.
+
+*/
+function alphaSeq(str) {
+  return [...str]
+    .sort((a, b) => a.localeCompare(b))
+    .map(
+      (char) =>
+        char.toUpperCase() +
+        char.toLowerCase().repeat(char.toLowerCase().charCodeAt(0) - 97),
+    )
+    .join(",");
+}
+console.log(alphaSeq("ZpglnRxqenU")); // "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
+console.log(alphaSeq("NyffsGeyylB")); // "Bb,Eeeee,Ffffff,Ffffff,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Sssssssssssssssssss,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy"
