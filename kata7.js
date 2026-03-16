@@ -3514,6 +3514,11 @@ function alphaSeq(str) {
         char.toLowerCase().repeat(char.toLowerCase().charCodeAt(0) - 97),
     )
     .join(",");
+  // [OR]
+  // return [...str.toLowerCase()]
+  //   .sort()
+  //   .map((char) => char.toUpperCase() + char.repeat(char.charCodeAt(0) - 97))
+  //   .join(",");
 }
 console.log(alphaSeq("ZpglnRxqenU")); // "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
 console.log(alphaSeq("NyffsGeyylB")); // "Bb,Eeeee,Ffffff,Ffffff,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Sssssssssssssssssss,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy"
