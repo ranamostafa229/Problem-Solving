@@ -40,9 +40,21 @@ common([1,2,2,3],[5,3,2,2],[7,3,2,2]) = 7 because 2,2 & 3 are common in the 3 ar
 
 */
 function common(a, b, c) {
-  return a
-    .filter((num) => b.includes(num) && c.includes(num))
-    .reduce((sum, num) => sum + num, 0);
+  const countA = {};
+  const countB = {};
+  const countC = {};
+
+  a.forEach((num) => (countA[num] = (countA[num] || 0) + 1));
+  b.forEach((num) => (countB[num] = (countB[num] || 0) + 1));
+  c.forEach((num) => (countC[num] = (countC[num] || 0) + 1));
+
+  let sum = 0;
+  for (const num in countA) {
+    const minCount = Math.min(countA[num], countB[num] || 0, countC[num] || 0);
+    sum += num * minCount;
+  }
+
+  return sum;
 }
 console.log(common([1, 2, 3], [5, 3, 2], [7, 3, 2])); // 5
 console.log(common([1, 2, 2, 3], [5, 3, 2, 2], [7, 3, 2, 2])); // 7
