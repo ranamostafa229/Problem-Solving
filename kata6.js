@@ -26,6 +26,23 @@ function multiplicationTable(size) {
   // }
   // return table;
 }
-console.log(multiplicationTable(3)); // [[1,2,3],[2,4,6],[3,6,9]]
-console.log(multiplicationTable(1)); // [[1]]
-console.log(multiplicationTable(2)); // [[1,2],[2,4]]
+// console.log(multiplicationTable(3)); // [[1,2,3],[2,4,6],[3,6,9]]
+// console.log(multiplicationTable(1)); // [[1]]
+// console.log(multiplicationTable(2)); // [[1,2],[2,4]]
+
+/* (2) Common array elements
+Given three arrays of integers, return the sum of elements that are common in all three arrays.
+
+For example:
+
+common([1,2,3],[5,3,2],[7,3,2]) = 5 because 2 & 3 are common in all 3 arrays
+common([1,2,2,3],[5,3,2,2],[7,3,2,2]) = 7 because 2,2 & 3 are common in the 3 arrays
+
+*/
+function common(a, b, c) {
+  return a
+    .filter((num) => b.includes(num) && c.includes(num))
+    .reduce((sum, num) => sum + num, 0);
+}
+console.log(common([1, 2, 3], [5, 3, 2], [7, 3, 2])); // 5
+console.log(common([1, 2, 2, 3], [5, 3, 2, 2], [7, 3, 2, 2])); // 7
