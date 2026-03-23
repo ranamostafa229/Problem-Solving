@@ -3520,5 +3520,40 @@ function alphaSeq(str) {
   //   .map((char) => char.toUpperCase() + char.repeat(char.charCodeAt(0) - 97))
   //   .join(",");
 }
-console.log(alphaSeq("ZpglnRxqenU")); // "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
-console.log(alphaSeq("NyffsGeyylB")); // "Bb,Eeeee,Ffffff,Ffffff,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Sssssssssssssssssss,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy"
+// console.log(alphaSeq("ZpglnRxqenU")); // "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
+// console.log(alphaSeq("NyffsGeyylB")); // "Bb,Eeeee,Ffffff,Ffffff,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Sssssssssssssssssss,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy,Yyyyyyyyyyyyyyyyyyyyyyyyy"
+
+/* (116) Mutate My Strings
+I will give you two strings. I want you to transform stringOne into stringTwo one letter at a time.
+
+Example:
+
+stringOne = 'bubble gum';
+stringTwo = 'turtle ham';
+
+Result:
+bubble gum
+tubble gum
+turble gum
+turtle gum
+turtle hum
+turtle ham
+
+*/
+function mutateMyStrings(stringOne, stringTwo) {
+  // Convert both strings into arrays for easy manipulation
+  let arrOne = stringOne.split("");
+  let arrTwo = stringTwo.split("");
+  let output = [];
+  // Loop through each character
+  for (let i = 0; i < arrOne.length; i++) {
+    if (arrOne[i] !== arrTwo[i]) {
+      arrOne[i] = arrTwo[i]; // change one character
+      output.push(arrOne.join(""));
+    }
+  }
+  output.unshift(stringOne);
+  return output.join("\n").replace(/\n$/, "");
+}
+
+console.log(mutateMyStrings("bubble gum", "turtle ham")); // 'bubble gum\ntubble gum\nturble gum\nturtle gum\nturtle hum\nturtle ham'
