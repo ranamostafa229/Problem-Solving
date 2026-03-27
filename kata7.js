@@ -3584,5 +3584,26 @@ function wordValue(words) {
       (index + 1),
   );
 }
-console.log(wordValue(["codewars", "abc", "xyz"])); // [88,12,225]
-console.log(wordValue(["abc abc", "abc abc", "abc", "abc"])); //  [12,24,18,24]
+// console.log(wordValue(["codewars", "abc", "xyz"])); // [88,12,225]
+// console.log(wordValue(["abc abc", "abc abc", "abc", "abc"])); //  [12,24,18,24]
+
+/* (118) Two to One
+Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string
+(alphabetical ascending), the longest possible, containing distinct letters
+- each taken only once - coming from s1 or s2.
+
+Examples:
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
+longest(a, b) -> "abcdefklmopqwxy"
+
+a = "abcdefghijklmnopqrstuvwxyz"
+longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+*/
+
+function longest(s1, s2) {
+  return [...new Set(s1 + s2)].sort().join("");
+}
+console.log(longest("aretheyhere", "yestheyarehere")); //"aehrsty"
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); //"abcdefghilnoprstu"
