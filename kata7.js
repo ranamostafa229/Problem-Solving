@@ -3634,6 +3634,12 @@ function nbDig(n, d) {
     .join("")
     .split("")
     .filter((char) => char == d).length;
+  // [OR]
+  // return [...Array(n + 1)]
+  //   .map((_, i) => i * i)
+  //   .join("")
+  //   .split("")
+  //   .filter((char) => +char === d).length;
 }
 console.log(nbDig(5750, 0)); // 4700
 console.log(nbDig(11011, 2)); // 9481
